@@ -1,0 +1,24 @@
+@media(max-width: 1540px) {
+    .search-input {
+        width: 360px !important;
+    }
+    
+    .owner-informations{
+        width: 370px !important;
+    }
+
+    .account-button {
+        margin-left: 20px !important;
+    }
+}
+@media(max-width: 1300px){
+    .search-input {
+        width: 300px !important;
+    }
+    .owner-informations {
+        width: 310px !important;
+    }
+    .account-button {
+        margin-left: 20px !important;
+    }
+}

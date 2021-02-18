@@ -1,0 +1,746 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.woff2') format('woff2'),
+    url('./fonts/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Black.woff2') format('woff2'),
+    url('./fonts/Roboto-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-BlackItalic.woff2') format('woff2'),
+    url('./fonts/Roboto-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Light.woff2') format('woff2'),
+    url('./fonts/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-BoldItalic.woff2') format('woff2'),
+    url('./fonts/Roboto-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Italic.woff2') format('woff2'),
+    url('./fonts/Roboto-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-LightItalic.woff2') format('woff2'),
+    url('./fonts/Roboto-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Medium.woff2') format('woff2'),
+    url('./fonts/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-MediumItalic.woff2') format('woff2'),
+    url('./fonts/Roboto-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.woff2') format('woff2'),
+    url('./fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Thin.woff2') format('woff2'),
+    url('./fonts/Roboto-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-ThinItalic.woff2') format('woff2'),
+    url('./fonts/Roboto-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: #28578bd7;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    height: 600px;
+    width: 1187px;
+    margin: 0 auto;
+}
+
+.account-sidebar {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    animation-name: sidebarOpen;
+    animation-duration: 0.2s;
+}
+
+.account-sidebar .account-sidebar-settings.active {
+    display: inline-block;
+    
+    animation: slideInLeft; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0.5s; /* don't forget to set a duration! */
+}
+
+.account-sidebar-settings {
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.account-sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url('../img/telegram-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 20px 10px 20px;
+}
+
+.image-account_owner {
+    width: 50px;
+    height: 50px;
+}
+
+.owner-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.text-account_owner {
+    margin-top: 15px;
+}
+
+.sidebar-owner-name {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: #fff;
+}
+
+.sidebar-owner-phone_number {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.sidebar-settings-list {
+    padding: 0;
+}
+
+.sidebar-settings-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.sidebar-settings-item:hover {
+    background-color: #f1f1f1;
+}
+
+.sidebar-settings-img svg{
+    width: 27px;
+    height: 27px;
+    fill: #A9A9A9;
+}
+
+.sidebar-settings-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    padding-left: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* account settings section modal*/
+.account-settings-section {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    animation-name: sidebarOpen;
+    animation-duration: 0.2s;
+}
+
+.account-settings_wrapper {
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 40%;
+    transform: translate(-50%);
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+}
+
+.account-settings-section .account-settings_wrapper.active {
+    display: inline-block;
+    margin: 0 200px;
+    animation: slideInRight;
+    animation-duration: 0.5s;
+}
+
+.account-setting-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.settings-title {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.account-settings-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.account-settings-image  {
+    padding: 7.5px 11px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.account-settings-image svg{
+    width: 17px;
+    height: 17px;
+    fill: #a9a9a9;
+}
+
+.account-settings-close-btn {
+    color: #a9a9a9;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.account-settings-close-btn:hover {
+    color: #bdbdbd;
+}
+
+.account-settings-change-list {
+    background-color: #fff;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.3);
+    width: 150px;
+    position: absolute;
+    padding: 10px 0px 10px 0px;
+    left: 110px;
+    top: 55px;
+    display: none;
+}
+
+.account-settings-change-item {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px 20px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.account-settings-change-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* account side */
+.accounts-side {
+    background-color: #fff;
+    border-top: 20px solid #F1F1F1;
+    width: 35%;
+    height: 100%;
+    position: relative;
+}
+
+.account-header {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.account-header-btn-img {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.account-header-btn-img:focus {
+    background-color: #f1f1f1;
+}
+
+.account-header svg {
+    width: 20px;
+    height: 25px;
+    fill: #A8A8A8;
+}
+
+.account-input {
+    width: 340px;   
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    background-color: #f1f1f1;
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+
+.account-input::placeholder {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.account-input:focus {
+    box-shadow: inset 0px 0px 0px 1px #5FC7F4;
+    background-color: #fff;
+}
+
+.account-list {
+    padding: 0 !important;
+    margin-top: 10px;
+}
+
+.account-item {
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.account-item:hover {
+    background-color: #f1f1f1;
+}
+
+.image-account {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.account-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.accout-text {
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.account-subtext {
+    font-size: 16px;
+    color: #A8A8A8;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+.account-subtext_first-letter {
+    color: #5FC7F4;
+    letter-spacing: 0.3px;
+}
+
+.account-time {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    font-size: 14px;
+    color: #A8A8A8;
+}
+
+/* chats section */
+.chats-side {
+    border-top: 20px solid #F1F1F1;
+    width: 65%;
+    height: 100%;
+    background-image: url('../img/telegram-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.chats-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #f1f1f1;
+    border-top: none;
+    display: none;
+    animation-name: chatsHeader;
+    animation-duration: 0.2s;
+}
+
+.text-section-chats {
+    width: 650px;
+    padding: 10px 20px;
+    display: none;
+}
+
+.text-section-chats.active {
+    display: block;
+} 
+
+.chat-text {
+    margin: 0;
+    font-size: 18px;
+}
+
+.chat-subtext {
+    margin: 0;
+    font-size: 14px;
+    color: #A8A8A8;
+}
+
+.tool-section-chats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+}
+
+.chat-loop-image {
+    padding: 5px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.chat-loop-image svg {
+    width: 20px;
+    height: 20px;
+    fill: #A8A8A8;
+    
+}
+
+.chat-loop-image svg:hover {
+    fill: #BDBDBD;
+}
+
+.chat-account-image {
+    padding: 5px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.chat-account-image svg {
+    width: 20px;
+    height: 20px;
+    fill: #A8A8A8;
+}
+
+.chat-account-image svg:hover {
+    fill: #bdbdbd;
+}
+
+.chat-settings-image{
+    padding: 5px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.chat-settings-image svg {
+    height: 20px;
+    width: 20px;
+    fill: #A8A8A8;
+}
+
+.chat-settings-image svg:hover {
+    fill: #BDBDBD;
+}
+
+.chats-footer {
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px 0px 20px;
+    border-left: 1px solid #f1f1f1;
+    display: none;
+    animation-name: chatFooter;
+    animation-duration: 0.2s;
+}
+
+.chat-textarea {
+    resize: none;
+    border: none;
+    outline: none;
+    width: 82%;
+    min-height: 30px;
+    font-size: 15px;
+    padding-top: 16px;
+}
+
+.chat-textarea::placeholder{
+    font-size: 15px;
+    columns: #A8A8A8;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.chat-message-tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+.smile-image {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.smile-image svg {
+    width: 28px;
+    height: 28px;
+    fill: #BDBDBD;
+    cursor: pointer;
+}
+
+.smile-image svg:hover {
+    fill: #BDBDBDbb;
+}
+
+.microphone-image {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.microphone-image svg {
+    width: 28px;
+    height: 28px;
+    fill: #BDBDBD;
+}
+
+.microphone-image svg:hover {
+    fill: #BDBDBDbb;
+}
+
+.send-button-image {
+    padding: 5px 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.send-button-image svg {
+    width: 28px;
+    height: 28px;
+    fill: #40A7E3;
+    cursor: pointer;
+}
+
+.chats-list {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    padding: 0;
+    height: 460px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    animation-name: chatsList;
+    animation-duration: 0.2s;
+    display: none;
+}
+
+.chats-list.active {
+    display: block;
+}
+
+.chats-list::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-item {
+    background-color: #EFFDDE;
+    max-width: 50%;
+    margin: 10px 20px;
+    padding: 7px 7px 14px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.chat-item-sara {
+    background-color: #fff;
+}
+
+.chat-text-time.sara {
+    color: #A8A8A8;
+    right: 5px;
+}
+
+.chat-text {
+    color: #020202;
+    padding: 0;
+    overflow-wrap: break-word;
+    position: relative;
+}
+
+.chat-text-time {
+    position: absolute;
+    bottom: -12px;
+    right: 30px;
+    font-size: 15px;
+    color: #6FCB63;
+}
+
+.chat-text-img {
+    fill: #6FCB63;
+    width: 20px;
+    position: absolute;
+    bottom: -10px;
+    right: 5px;
+}
+
+.chat-check-wrapper {
+    position: relative;
+}
+
+.chat-check-img svg:nth-child(1) {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    fill: #64C759;
+    bottom: 5px;
+    right: 5px;
+}
+
+.chat-check-img svg:nth-child(2) {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    fill: #64C759;
+    bottom: 5px;
+    right: 10px;
+}
+
+@keyframes sidebarOpen {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes chatsHeader {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes chatsList {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes chatFooter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

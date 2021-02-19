@@ -180,8 +180,7 @@ let chatBtnToAccountBack = document.querySelector('.back-to-account-section svg'
 
 // get chats change list btn
 let chatChangeListBtn = document.querySelector('.chat-settings-image');
-// get chats change list
-let chatChangeList = document.querySelector('.chat-change-first-list-wrapper');
+
 // listen input form to search accounts
 searchBar.addEventListener('keyup', searchAccounts);
 // listen show sidebar click
@@ -315,7 +314,7 @@ function outsideClick(e){
         markAccountModalMainImage.style.display = 'none';
     } else if (e.target == userAccountModalMainImage) {
         userAccountModalMainImage.style.display = 'none';
-    } 
+    }
 }
 
 // open sidebar game
@@ -773,12 +772,7 @@ listItemElements.forEach(function(e){
 
 // open chat change list
 function openChatChangeList() {
-    chatChangeList.style.display = 'block';
+    
 }
 
-chatChangeList.addEventListener('click', e => {
-    if (e.target == chatChangeList) {
-        chatChangeList.style.display = 'none';
-    }
 
-})

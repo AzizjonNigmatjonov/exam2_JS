@@ -174,8 +174,10 @@ let markAccountModalMainImage = document.querySelector('.mark-account-image-moda
 let markAccountModalMainImageBtn = document.querySelector('.chats-user-modal-third-img');
 // get mark phone modal close btn
 let markPhoneModalCloseBtn = document.querySelector('.mark-account-image-modal-close-btn');
+
 // get chat back btn to account section
 let chatBtnToAccountBack = document.querySelector('.back-to-account-section svg');
+
 // get chats change list btn
 let chatChangeListBtn = document.querySelector('.chat-settings-image');
 
@@ -205,7 +207,10 @@ settingsEditProfile.addEventListener('click', openSettingsEditModal);
 accountSettingsEditItem.addEventListener('click', openSettingsEditModal);
 // listen account settings remove item
 settingsRemoveProfile.addEventListener('click', alert);
+// listen chats for loop 
 // chatsSearch.addEventListener('click', searchForAccounts);
+// listen chat message send btn
+chatSendBtn.addEventListener('click', sendChatMessage);
 // listen edit arrow 
 editArrow.addEventListener('click', backToAccountSettings);
 // listen edit close btn
@@ -250,6 +255,7 @@ saraPhoneCallVideoBtn.addEventListener('click', changeVideCall);
 // listen sara account modal main image
 saraAccountModalImage.addEventListener('click', openSaraAccountMainImg);
 saraPhoneCallEndBtn.addEventListener('click', closeSaraPhoneCall);
+
 // listen mark account modal close btn
 markAccountModalCloseBtn.addEventListener('click', closeMarkAccount);
 // listen mark account modal change list
@@ -268,6 +274,7 @@ markPhoneModalPhoneBtn.addEventListener('click', closeMarkPhoneModal);
 markAccountModalMainImageBtn.addEventListener('click', openMarkAccountModalMainImg);
 // listen mark phone modal close btn
 markPhoneModalCloseBtn.addEventListener('click', closeMarkPhoneModalByBtn);
+
 // listen chat btn back to account section
 chatBtnToAccountBack.addEventListener('click', backToAccountSection);
 // listen chat change list btn
@@ -401,6 +408,49 @@ function searchAccounts(e) {
     })
 }
 
+
+
+// send messages to lists
+// listItemElements.forEach(item => {
+//     let targetItem = document.querySelector(item.dataset.target)
+//     item.addEventListener('click', () => {
+//         chatsLists.forEach(list => {
+
+//         })
+//     })
+// })
+
+
+
+let saraChat = [];
+let messages = [];
+// send chats message
+function sendChatMessage() {
+    if (textareaElement.value) {
+        let chatParagraph = document.createElement('p');
+        chatParagraph.classList.add('chat-send-text');
+        chatParagraph.textContent = textareaElement.value;
+        let newChatItem = document.createElement('li');
+        newChatItem.classList.add('chat-item');
+        newChatItem.classList.add('active');
+        newChatItem.appendChild(chatParagraph);
+        chatsList.appendChild(newChatItem);
+        textareaElement.value = '';
+        let time = document.createElement('time');
+        time.textContent = moment().format('h:mm A');
+        time.classList.add('chat-text-time');
+        chatParagraph.appendChild(time);
+        let tick = document.querySelector('.chat-text-img');
+        let newTick = tick.cloneNode(true)
+        chatParagraph.appendChild(newTick);
+        messages.push({
+            id: messages.length + 1,
+        })
+        newChatItem.setAttribute('id', `message#${messages.length + 1}`);
+        window.location.href = `#message#${messages.length + 1}`;
+    }
+}
+
 // add names of item to chat
 listItemElements.forEach(function (e) {
     let targetText = document.querySelector(e.dataset.target);
@@ -412,56 +462,56 @@ listItemElements.forEach(function (e) {
         chatsTextElements.forEach(function(chat) {
             if (chat == targetText) {
                 chat.classList.add('active');
-                chatsLists.forEach(function(list) {
-                    if (list.id == targetText.id) {
-                        list.classList.add('active');
-                        let chatButtons = document.querySelectorAll('.chatBtn');
-                        chatButtons.forEach(function(btn) {
-                            if (btn.id == targetText.id) {
-                                btn.classList.add('active')
-                                let messages = [];
-                                let textAreaElements = document.querySelectorAll('.chat-textarea');
-                                textAreaElements.forEach(function(area) {
-                                    if (area.id == targetText.id) {
-                                        area.classList.add('active')
-                                        btn.addEventListener('click', () => {
-                                            if (area.value) {
-                                                let newItem = document.createElement('li');
-                                                newItem.classList.add('chat-item');
-                                                let newPelement = document.createElement('p');
-                                                newPelement.textContent = area.value;
-                                                newPelement.classList.add('chat-send-text');
-                                                let timeElement = document.createElement('time');
-                                                timeElement.textContent = moment().format('h:mm A');
-                                                timeElement.classList.add('chat-text-time');
-                                                let tick = document.querySelector('.chat-text-img');
-                                                let newTick = tick.cloneNode(true)
-                                                newPelement.appendChild(newTick);
-                                                newPelement.appendChild(timeElement);
-                                                newItem.appendChild(newPelement);
-                                                list.appendChild(newItem);
-                                                area.value = '';
-                                                messages.push({
-                                                    id: messages.length + 1,
-                                                })
-                                                newItem.setAttribute('id', `message#${messages.length + 1}`);
-                                                window.location.href = `#message#${messages.length + 1}`;
-                                            }
-                                        })    
-                                    } else {
-                                        area.classList.remove('active')
+            } else {
+                chat.classList.remove('active');
+            }
+        })
+        chatsLists.forEach(function(list) {
+            if (list.id == targetText.id) {
+                list.classList.add('active');
+                let chatButtons = document.querySelectorAll('.chatBtn');
+                chatButtons.forEach(function(btn) {
+                    if (btn.id == targetText.id) {
+                        btn.classList.add('active')
+                        let messages = [];
+                        let textAreaElements = document.querySelectorAll('.chat-textarea');
+                        textAreaElements.forEach(function(area) {
+                            if (area.id == targetText.id) {
+                                area.classList.add('active')
+                                btn.addEventListener('click', () => {
+                                    if (area.value) {
+                                        let newItem = document.createElement('li');
+                                        newItem.classList.add('chat-item');
+                                        let newPelement = document.createElement('p');
+                                        newPelement.textContent = area.value;
+                                        newPelement.classList.add('chat-send-text');
+                                        let timeElement = document.createElement('time');
+                                        timeElement.textContent = moment().format('h:mm A');
+                                        timeElement.classList.add('chat-text-time');
+                                        let tick = document.querySelector('.chat-text-img');
+                                        let newTick = tick.cloneNode(true)
+                                        newPelement.appendChild(newTick);
+                                        newPelement.appendChild(timeElement);
+                                        newItem.appendChild(newPelement);
+                                        list.appendChild(newItem);
+                                        area.value = '';
+                                        messages.push({
+                                            id: messages.length + 1,
+                                        })
+                                        newItem.setAttribute('id', `message#${messages.length + 1}`);
+                                        window.location.href = `#message#${messages.length + 1}`;
                                     }
-                                })
+                                })    
                             } else {
-                                btn.classList.remove('active')
+                                area.classList.remove('active')
                             }
                         })
                     } else {
-                        list.classList.remove('active');
+                        btn.classList.remove('active')
                     }
                 })
             } else {
-                chat.classList.remove('active');
+                list.classList.remove('active');
             }
         })
         // show chats header
@@ -472,6 +522,23 @@ listItemElements.forEach(function (e) {
         chatsList.style.display = 'block';
     })
 })
+
+
+// event.target.parentNode.parentNode.dataset.target == '#sara' || event.target.dataset.target == '#sara'
+
+// let dannyList = document.querySelector('#danny')
+// console.log(dannyList.dataset.target);
+// listItemElements.forEach(function (item) {
+//     item.addEventListener('click', event => {
+//         console.log(event.target.);
+//         if (event.target.parentNode.parentNode.dataset.target == dannyList.dataset.target || event.target.dataset.target == dannyList.dataset.target) {
+//             console.log(`ha`);
+
+//         }
+//     })
+// })
+
+
 
 // close every thing by escape
 document.body.addEventListener('keyup', e => {
@@ -510,6 +577,15 @@ function alert() {
         logOut()
     }
 }
+
+// // press account
+// let liId = [];
+// listItemElements.forEach(function(li){
+//     li.addEventListener('click', function(e){
+//         liId.push(e);
+//         li.setAttribute('Id', liId.length + 1);
+//     })
+// })
 
 // query function
 function $(element) {
@@ -693,3 +769,10 @@ listItemElements.forEach(function(e){
         
     })
 })
+
+// open chat change list
+function openChatChangeList() {
+    
+}
+
+

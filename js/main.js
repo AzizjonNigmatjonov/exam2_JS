@@ -174,10 +174,8 @@ let markAccountModalMainImage = document.querySelector('.mark-account-image-moda
 let markAccountModalMainImageBtn = document.querySelector('.chats-user-modal-third-img');
 // get mark phone modal close btn
 let markPhoneModalCloseBtn = document.querySelector('.mark-account-image-modal-close-btn');
-
 // get chat back btn to account section
 let chatBtnToAccountBack = document.querySelector('.back-to-account-section svg');
-
 // get chats change list btn
 let chatChangeListBtn = document.querySelector('.chat-settings-image');
 
@@ -252,7 +250,6 @@ saraPhoneCallVideoBtn.addEventListener('click', changeVideCall);
 // listen sara account modal main image
 saraAccountModalImage.addEventListener('click', openSaraAccountMainImg);
 saraPhoneCallEndBtn.addEventListener('click', closeSaraPhoneCall);
-
 // listen mark account modal close btn
 markAccountModalCloseBtn.addEventListener('click', closeMarkAccount);
 // listen mark account modal change list
@@ -271,7 +268,6 @@ markPhoneModalPhoneBtn.addEventListener('click', closeMarkPhoneModal);
 markAccountModalMainImageBtn.addEventListener('click', openMarkAccountModalMainImg);
 // listen mark phone modal close btn
 markPhoneModalCloseBtn.addEventListener('click', closeMarkPhoneModalByBtn);
-
 // listen chat btn back to account section
 chatBtnToAccountBack.addEventListener('click', backToAccountSection);
 // listen chat change list btn
@@ -405,18 +401,6 @@ function searchAccounts(e) {
     })
 }
 
-
-
-// send messages to lists
-// listItemElements.forEach(item => {
-//     let targetItem = document.querySelector(item.dataset.target)
-//     item.addEventListener('click', () => {
-//         chatsLists.forEach(list => {
-
-//         })
-//     })
-// })
-
 // add names of item to chat
 listItemElements.forEach(function (e) {
     let targetText = document.querySelector(e.dataset.target);
@@ -489,23 +473,6 @@ listItemElements.forEach(function (e) {
     })
 })
 
-
-// event.target.parentNode.parentNode.dataset.target == '#sara' || event.target.dataset.target == '#sara'
-
-// let dannyList = document.querySelector('#danny')
-// console.log(dannyList.dataset.target);
-// listItemElements.forEach(function (item) {
-//     item.addEventListener('click', event => {
-//         console.log(event.target.);
-//         if (event.target.parentNode.parentNode.dataset.target == dannyList.dataset.target || event.target.dataset.target == dannyList.dataset.target) {
-//             console.log(`ha`);
-
-//         }
-//     })
-// })
-
-
-
 // close every thing by escape
 document.body.addEventListener('keyup', e => {
     if (e.keyCode == 27) {
@@ -543,15 +510,6 @@ function alert() {
         logOut()
     }
 }
-
-// // press account
-// let liId = [];
-// listItemElements.forEach(function(li){
-//     li.addEventListener('click', function(e){
-//         liId.push(e);
-//         li.setAttribute('Id', liId.length + 1);
-//     })
-// })
 
 // query function
 function $(element) {
@@ -735,10 +693,3 @@ listItemElements.forEach(function(e){
         
     })
 })
-
-// open chat change list
-function openChatChangeList() {
-    
-}
-
-

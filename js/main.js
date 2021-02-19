@@ -207,10 +207,7 @@ settingsEditProfile.addEventListener('click', openSettingsEditModal);
 accountSettingsEditItem.addEventListener('click', openSettingsEditModal);
 // listen account settings remove item
 settingsRemoveProfile.addEventListener('click', alert);
-// listen chats for loop 
 // chatsSearch.addEventListener('click', searchForAccounts);
-// listen chat message send btn
-chatSendBtn.addEventListener('click', sendChatMessage);
 // listen edit arrow 
 editArrow.addEventListener('click', backToAccountSettings);
 // listen edit close btn
@@ -419,37 +416,6 @@ function searchAccounts(e) {
 //         })
 //     })
 // })
-
-
-
-let saraChat = [];
-let messages = [];
-// send chats message
-function sendChatMessage() {
-    if (textareaElement.value) {
-        let chatParagraph = document.createElement('p');
-        chatParagraph.classList.add('chat-send-text');
-        chatParagraph.textContent = textareaElement.value;
-        let newChatItem = document.createElement('li');
-        newChatItem.classList.add('chat-item');
-        newChatItem.classList.add('active');
-        newChatItem.appendChild(chatParagraph);
-        chatsList.appendChild(newChatItem);
-        textareaElement.value = '';
-        let time = document.createElement('time');
-        time.textContent = moment().format('h:mm A');
-        time.classList.add('chat-text-time');
-        chatParagraph.appendChild(time);
-        let tick = document.querySelector('.chat-text-img');
-        let newTick = tick.cloneNode(true)
-        chatParagraph.appendChild(newTick);
-        messages.push({
-            id: messages.length + 1,
-        })
-        newChatItem.setAttribute('id', `message#${messages.length + 1}`);
-        window.location.href = `#message#${messages.length + 1}`;
-    }
-}
 
 // add names of item to chat
 listItemElements.forEach(function (e) {

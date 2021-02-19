@@ -14,19 +14,52 @@
     .account {
         width: 100%;
         display: block;
+        &-close-btn {
+            display: flex;
+        }
+    }
+    .account.remove {
+        display: none;
     }
     .account-input {
         width: 700px;
     }
+    .every-thing-close-btn {
+        display: block !important;
+    }
     .chats {
         display: none;
         width: 100%;
+    }
+    .chats.active {
+        display: flex;
     }
     .account-settings_wrapper {
         left: 200px !important;
     }
     .account-settings-edit-modal-wrapper {
         left: 400px !important;
+    }
+
+    .chats .every-thing-close-btn {
+        top: -50px;
+    }
+
+    .chats .chat-text {
+        padding-left: 50px;
+    }
+
+    .chats .chat-subtext {
+        padding-left: 50px;
+    }
+    .chats-user-modal-wrapper {
+        left: 50% !important;
+    }
+    .chats-user-modal-second-wrapper {
+        left: 50% !important;
+    }
+    .chats-user-modal-third-wrapper {
+        left: 50% !important;
     }
 }
 
@@ -62,6 +95,27 @@
         width: 300px;
         height: 300px;
     }
+    .danny-account-image-modal-img {
+        width: 300px !important;
+        height: 300px !important;
+    }
+    .sara-account-image-modal-img {
+        width: 300px !important;
+        height: 300px !important;
+    }
+    .mark-account-image-modal-img {
+        width: 300px !important;
+        height: 300px !important;
+    }
+    .user-phone-call-modal {
+        width: 370px;
+    }
+    .user-phone-call-modal-second {
+        width: 370px;
+    }
+    .user-phone-call-modal-third {
+        width: 370px;
+    }
 }
 
 @media (max-width: 540px) {
@@ -78,6 +132,15 @@
     .account-settings-edit-modal-wrapper {
         width: 300px !important;
         left: 200px !important;
+    }
+    .chats-user-modal-wrapper {
+        width: 300px;
+    }
+    .chats-user-modal-second-wrapper {
+        width: 300px;
+    }
+    .chats-user-modal-third-wrapper {
+        width: 300px;
     }
 }
 
@@ -99,5 +162,14 @@
     .settings-owner-modal-img {
         width: 200px;
         height: 200px;
+    }
+    .chats-user-modal-wrapper {
+        width: 100%;
+    }
+    .chats-user-modal-second-wrapper {
+        width: 100%;
+    }
+    .chats-user-modal-third-wrapper {
+        width: 100%;
     }
 }

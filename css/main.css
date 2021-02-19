@@ -93,14 +93,6 @@ body {
   background-color: #28578bd7;
 }
 
-.telegram {
-  background-color: red;
-}
-
-.container {
-  background-color: yellow;
-}
-
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,6 +110,33 @@ body {
   width: 35%;
   height: 100%;
   position: relative;
+}
+
+.account-close-btn {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+  color: #ababab;
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  cursor: pointer;
+  display: none;
+}
+
+.account-close-btn:hover {
+  background-color: #D75A5A;
+  color: #f1f1f1;
 }
 
 .account-header {
@@ -997,6 +1016,2027 @@ body {
   width: 100%;
 }
 
+.chats-user-modal {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.chats-user-modal-wrapper {
+  width: 400px;
+  height: 550px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+  left: 52.5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  display: inline-block;
+  -webkit-animation: slideRight;
+          animation: slideRight;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  overflow-y: scroll;
+}
+
+.chats-user-modal-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chats-user-modal-header {
+  background-color: white;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0 0 2px 0px #BDBDBD;
+          box-shadow: 0 0 2px 0px #BDBDBD;
+  position: relative;
+}
+
+.chats-user-modal-tools-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chats-user-modal-info-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chats-user-modal-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80px;
+}
+
+.chats-user-modal-phone-img svg {
+  width: 17px;
+  height: 17px;
+  fill: #a8a8a8;
+  cursor: pointer;
+}
+
+.chats-user-modal-change-list-img svg {
+  width: 17px;
+  height: 17px;
+  fill: #a8a8a8;
+  cursor: pointer;
+}
+
+.chats-user-modal-change-list {
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  width: 170px;
+  padding: 5px 0px 5px 0px;
+  -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
+          box-shadow: 0px 0px 2px 1px #BDBDBD;
+}
+
+.chats-user-modal-change-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-change-item:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-close-btn {
+  font-size: 28px;
+  color: #a8a8a8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.chats-user-modal-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0px;
+}
+
+.chats-user-modal-text-section {
+  margin-left: 15px;
+}
+
+.chats-user-modal-text-section.second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chats-user-modal-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.chats-user-modal-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chats-user-modal-info-web {
+  font-size: 15px;
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.chats-user-modal-body {
+  background-color: white;
+  margin-top: 10px;
+  height: 250px;
+  -webkit-box-shadow: 0 0 2px 0px #BDBDBD;
+          box-shadow: 0 0 2px 0px #BDBDBD;
+}
+
+.chats-user-modal-list {
+  padding: 0;
+}
+
+.chats-user-modal-item:nth-child(2) {
+  margin-top: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+.chats-user-modal-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.chats-user-modal-item-img svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  fill: #a8a8a8;
+}
+
+.chats-user-modal-item-img.second svg {
+  margin-top: 0;
+}
+
+.chats-user-modal-item-text-section {
+  margin-left: 25px;
+}
+
+.chats-user-modal-item-text-section.second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
+  top: 330px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.chats-user-modal-item-text-section.second:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-item-user-name {
+  text-decoration: none;
+  color: #000;
+}
+
+.chats-user-modal-item-user-name:hover {
+  color: #000;
+}
+
+.chats-user-modal-item-user-name:nth-child(2) {
+  margin: 0;
+  margin-left: 25px;
+}
+
+.chats-user-modal-item-user-name-info {
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.chats-user-modal-item-add-contact-button.second {
+  top: 370px;
+}
+
+.chats-user-modal-item-add-contact-button {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+  margin-top: 10px;
+  text-align: start;
+  padding: 10px 0px 10px 65px;
+  color: #168ACD;
+  font-weight: 600;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-item-add-contact-button:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-item-hr {
+  position: absolute;
+  background-color: #a8a8a8;
+  border: none !important;
+  outline: none !important;
+  width: 100%;
+  height: 2px;
+  left: 65px;
+  top: 295px;
+}
+
+.chats-user-modal-footer {
+  background-color: white;
+  margin-top: 10px;
+  padding: 5px 0px;
+}
+
+.chats-user-modal-footer-list {
+  padding: 0;
+}
+
+.chats-user-modal-footer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-footer-item:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-footer-img svg {
+  width: 20px;
+  height: 20px;
+  fill: #a8a8a8;
+}
+
+.chats-user-modal-footer-text {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.chats-user-modal-second {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.chats-user-modal-second-wrapper {
+  width: 400px;
+  height: 550px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+  left: 52.5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  display: inline-block;
+  -webkit-animation: slideRight;
+          animation: slideRight;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  overflow-y: scroll;
+}
+
+.chats-user-modal-second-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chats-user-modal-second-header {
+  background-color: white;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0 0 2px 0px #BDBDBD;
+          box-shadow: 0 0 2px 0px #BDBDBD;
+  position: relative;
+}
+
+.chats-user-modal-second-tools-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chats-user-modal-second-info-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chats-user-modal-second-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80px;
+}
+
+.chats-user-modal-second-phone-img svg {
+  width: 17px;
+  height: 17px;
+  fill: #a8a8a8;
+  cursor: pointer;
+}
+
+.chats-user-modal-second-change-list-img svg {
+  width: 17px;
+  height: 17px;
+  fill: #a8a8a8;
+  cursor: pointer;
+}
+
+.chats-user-modal-second-change-list {
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  width: 170px;
+  padding: 5px 0px 5px 0px;
+  -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
+          box-shadow: 0px 0px 2px 1px #BDBDBD;
+}
+
+.chats-user-modal-second-change-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-second-change-item:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-second-close-btn {
+  font-size: 28px;
+  color: #a8a8a8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.chats-user-modal-second-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0px;
+}
+
+.chats-user-modal-second-text-section {
+  margin-left: 15px;
+}
+
+.chats-user-modal-second-text-section.second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chats-user-modal-second-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.chats-user-modal-second-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chats-user-modal-second-info-web {
+  font-size: 15px;
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.chats-user-modal-second-body {
+  background-color: white;
+  margin-top: 10px;
+  height: 250px;
+  -webkit-box-shadow: 0 0 2px 0px #BDBDBD;
+          box-shadow: 0 0 2px 0px #BDBDBD;
+}
+
+.chats-user-modal-second-list {
+  padding: 0;
+}
+
+.chats-user-modal-second-item:nth-child(2) {
+  margin-top: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+.chats-user-modal-second-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.chats-user-modal-second-item-img svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  fill: #a8a8a8;
+}
+
+.chats-user-modal-second-item-img.second svg {
+  margin-top: 0;
+}
+
+.chats-user-modal-second-item-text-section {
+  margin-left: 25px;
+}
+
+.chats-user-modal-second-item-text-section.second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
+  top: 330px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.chats-user-modal-second-item-text-section.second:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-second-item-user-name {
+  text-decoration: none;
+  color: #000;
+}
+
+.chats-user-modal-second-item-user-name:hover {
+  color: #000;
+}
+
+.chats-user-modal-second-item-user-name:nth-child(2) {
+  margin: 0;
+  margin-left: 25px;
+}
+
+.chats-user-modal-second-item-user-name-info {
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.chats-user-modal-second-item-add-contact-button.second {
+  top: 370px;
+}
+
+.chats-user-modal-second-item-add-contact-button {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+  margin-top: 10px;
+  text-align: start;
+  padding: 10px 0px 10px 65px;
+  color: #168ACD;
+  font-weight: 600;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-second-item-add-contact-button:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-second-item-hr {
+  position: absolute;
+  background-color: #a8a8a8;
+  border: none !important;
+  outline: none !important;
+  width: 100%;
+  height: 2px;
+  left: 65px;
+  top: 295px;
+}
+
+.chats-user-modal-second-footer {
+  background-color: white;
+  margin-top: 10px;
+  padding: 5px 0px;
+}
+
+.chats-user-modal-second-footer-list {
+  padding: 0;
+}
+
+.chats-user-modal-second-footer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-second-footer-item:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-second-footer-img svg {
+  width: 20px;
+  height: 20px;
+  fill: #a8a8a8;
+}
+
+.chats-user-modal-second-footer-text {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.user-phone-call-modal.active {
+  width: 100%;
+  height: 100%;
+}
+
+.user-phone-call-modal-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.user-phone-call-modal {
+  width: 570px;
+  height: 470px;
+  background-color: #1B1F23;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.user-phone-call-modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.user-phone-call-modal-mini-screen {
+  margin-top: 5px;
+  width: 12px;
+  height: 2px;
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-big-screen {
+  width: 12px;
+  height: 12px;
+  background-color: #1B1F23;
+  -webkit-box-shadow: inset 0px 0px 0px 2px white;
+          box-shadow: inset 0px 0px 0px 2px white;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-close-btn {
+  font-size: 24px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px auto 80px auto;
+}
+
+.user-phone-call-modal-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.user-phone-call-modal-name {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+.user-phone-call-modal-info {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.user-phone-call-modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 240px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.user-phone-call-modal-video-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-phone-call-modal-video-img.active {
+  background-color: #D75A5A;
+}
+
+.user-phone-call-modal-video-img svg.active {
+  fill: white;
+}
+
+.user-phone-call-modal-video-img {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-video-img svg {
+  width: 25px;
+  height: 25px;
+}
+
+.user-phone-call-modal-video-text {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-phone-call-modal-phone-cancel-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 10px;
+}
+
+.user-phone-call-modal-phone-cancel-img {
+  background-color: #D75A5A;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-phone-cancel-img svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.user-phone-call-modal-phone-cancel-text {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-phone-call-modal-mute-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-phone-call-modal-mute-img {
+  background-color: #373A3E;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-mute-img svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.user-phone-call-modal-mute-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.user-phone-call-modal-second.active {
+  width: 100%;
+  height: 100%;
+}
+
+.user-phone-call-modal-second-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.user-phone-call-modal-second {
+  width: 570px;
+  height: 470px;
+  background-color: #1B1F23;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.user-phone-call-modal-second-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.user-phone-call-modal-second-mini-screen {
+  margin-top: 5px;
+  width: 12px;
+  height: 2px;
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-second-big-screen {
+  width: 12px;
+  height: 12px;
+  background-color: #1B1F23;
+  -webkit-box-shadow: inset 0px 0px 0px 2px white;
+          box-shadow: inset 0px 0px 0px 2px white;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-second-close-btn {
+  font-size: 24px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-second-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px auto 80px auto;
+}
+
+.user-phone-call-modal-second-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.user-phone-call-modal-second-name {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+.user-phone-call-modal-second-info {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.user-phone-call-modal-second-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 240px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.user-phone-call-modal-second-video-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-phone-call-modal-second-video-img.active {
+  background-color: #D75A5A;
+}
+
+.user-phone-call-modal-second-video-img svg.active {
+  fill: white;
+}
+
+.user-phone-call-modal-second-video-img {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-second-video-img svg {
+  width: 25px;
+  height: 25px;
+}
+
+.user-phone-call-modal-second-video-text {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-phone-call-modal-second-phone-cancel-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 10px;
+}
+
+.user-phone-call-modal-second-phone-cancel-img {
+  background-color: #D75A5A;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-second-phone-cancel-img svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.user-phone-call-modal-second-phone-cancel-text {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-phone-call-modal-second-mute-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-phone-call-modal-second-mute-img {
+  background-color: #373A3E;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-second-mute-img svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.user-phone-call-modal-second-mute-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.sara-account-image-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  display: none;
+}
+
+.sara-account-image-modal-close-btn {
+  position: absolute;
+  font-size: 34px;
+  color: #a8a8a8;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.sara-account-image-modal-close-btn:hover {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.sara-account-image-modal-img {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.chats-user-modal-third {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.chats-user-modal-third-wrapper {
+  width: 400px;
+  height: 550px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  position: absolute;
+  top: 30px;
+  left: 52.5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  display: inline-block;
+  -webkit-animation: slideRight;
+          animation: slideRight;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  overflow-y: scroll;
+}
+
+.chats-user-modal-third-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chats-user-modal-third-header {
+  background-color: white;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0 0 2px 0px #BDBDBD;
+          box-shadow: 0 0 2px 0px #BDBDBD;
+  position: relative;
+}
+
+.chats-user-modal-third-tools-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chats-user-modal-third-info-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chats-user-modal-third-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80px;
+}
+
+.chats-user-modal-third-phone-img svg {
+  width: 17px;
+  height: 17px;
+  fill: #a8a8a8;
+  cursor: pointer;
+}
+
+.chats-user-modal-third-change-list-img svg {
+  width: 17px;
+  height: 17px;
+  fill: #a8a8a8;
+  cursor: pointer;
+}
+
+.chats-user-modal-third-change-list {
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  width: 170px;
+  padding: 5px 0px 5px 0px;
+  -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
+          box-shadow: 0px 0px 2px 1px #BDBDBD;
+}
+
+.chats-user-modal-third-change-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-third-change-item:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-third-close-btn {
+  font-size: 28px;
+  color: #a8a8a8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.chats-user-modal-third-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0px;
+}
+
+.chats-user-modal-third-text-section {
+  margin-left: 15px;
+}
+
+.chats-user-modal-third-text-section.second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chats-user-modal-third-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.chats-user-modal-third-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chats-user-modal-third-info-web {
+  font-size: 15px;
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.chats-user-modal-third-body {
+  background-color: white;
+  margin-top: 10px;
+  height: 250px;
+  -webkit-box-shadow: 0 0 2px 0px #BDBDBD;
+          box-shadow: 0 0 2px 0px #BDBDBD;
+}
+
+.chats-user-modal-third-list {
+  padding: 0;
+}
+
+.chats-user-modal-third-item:nth-child(2) {
+  margin-top: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+.chats-user-modal-third-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.chats-user-modal-third-item-img svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  fill: #a8a8a8;
+}
+
+.chats-user-modal-third-item-img.second svg {
+  margin-top: 0;
+}
+
+.chats-user-modal-third-item-text-section {
+  margin-left: 25px;
+}
+
+.chats-user-modal-third-item-text-section.second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
+  top: 330px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.chats-user-modal-third-item-text-section.second:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-third-item-user-name {
+  text-decoration: none;
+  color: #000;
+}
+
+.chats-user-modal-third-item-user-name:hover {
+  color: #000;
+}
+
+.chats-user-modal-third-item-user-name:nth-child(2) {
+  margin: 0;
+  margin-left: 25px;
+}
+
+.chats-user-modal-third-item-user-name-info {
+  color: #a8a8a8;
+  margin: 0;
+}
+
+.chats-user-modal-third-item-add-contact-button.second {
+  top: 370px;
+}
+
+.chats-user-modal-third-item-add-contact-button {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+  margin-top: 10px;
+  text-align: start;
+  padding: 10px 0px 10px 65px;
+  color: #168ACD;
+  font-weight: 600;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-third-item-add-contact-button:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-third-item-hr {
+  position: absolute;
+  background-color: #a8a8a8;
+  border: none !important;
+  outline: none !important;
+  width: 100%;
+  height: 2px;
+  left: 65px;
+  top: 295px;
+}
+
+.chats-user-modal-third-footer {
+  background-color: white;
+  margin-top: 10px;
+  padding: 5px 0px;
+}
+
+.chats-user-modal-third-footer-list {
+  padding: 0;
+}
+
+.chats-user-modal-third-footer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-third-footer-item:hover {
+  background-color: #f1f1f1;
+}
+
+.chats-user-modal-third-footer-img svg {
+  width: 20px;
+  height: 20px;
+  fill: #a8a8a8;
+}
+
+.chats-user-modal-third-footer-text {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.user-phone-call-modal-third.active {
+  width: 100%;
+  height: 100%;
+}
+
+.user-phone-call-modal-third-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.user-phone-call-modal-third {
+  width: 570px;
+  height: 470px;
+  background-color: #1B1F23;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.user-phone-call-modal-third-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.user-phone-call-modal-third-mini-screen {
+  margin-top: 5px;
+  width: 12px;
+  height: 2px;
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-third-big-screen {
+  width: 12px;
+  height: 12px;
+  background-color: #1B1F23;
+  -webkit-box-shadow: inset 0px 0px 0px 2px white;
+          box-shadow: inset 0px 0px 0px 2px white;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-third-close-btn {
+  font-size: 24px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-third-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px auto 80px auto;
+}
+
+.user-phone-call-modal-third-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.user-phone-call-modal-third-name {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+.user-phone-call-modal-third-info {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+.user-phone-call-modal-third-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 240px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.user-phone-call-modal-third-video-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-phone-call-modal-third-video-img.active {
+  background-color: #D75A5A;
+}
+
+.user-phone-call-modal-third-video-img svg.active {
+  fill: white;
+}
+
+.user-phone-call-modal-third-video-img {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-third-video-img svg {
+  width: 25px;
+  height: 25px;
+}
+
+.user-phone-call-modal-third-video-text {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-phone-call-modal-third-phone-cancel-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 10px;
+}
+
+.user-phone-call-modal-third-phone-cancel-img {
+  background-color: #D75A5A;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-third-phone-cancel-img svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.user-phone-call-modal-third-phone-cancel-text {
+  color: white;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-phone-call-modal-third-mute-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-phone-call-modal-third-mute-img {
+  background-color: #373A3E;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-phone-call-modal-third-mute-img svg {
+  width: 25px;
+  height: 25px;
+  fill: white;
+}
+
+.user-phone-call-modal-third-mute-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.mark-account-image-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  display: none;
+}
+
+.mark-account-image-modal-close-btn {
+  position: absolute;
+  font-size: 34px;
+  color: #a8a8a8;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.mark-account-image-modal-close-btn:hover {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.mark-account-image-modal-img {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.danny-account-image-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  display: none;
+}
+
+.danny-account-image-modal-close-btn {
+  position: absolute;
+  font-size: 34px;
+  color: #a8a8a8;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.danny-account-image-modal-close-btn:hover {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.danny-account-image-modal-img {
+  width: 500px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.chat-change-first-list-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow: auto;
+  display: none;
+}
+
+.chats-user-modal-first-list {
+  background-color: white;
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  width: 170px;
+  padding: 5px 0px 5px 0px;
+  -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
+          box-shadow: 0px 0px 2px 1px #BDBDBD;
+}
+
+.chats-user-modal-first-item {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats-user-modal-first-item:hover {
+  background-color: #f1f1f1;
+}
+
 /* chats section */
 .chats {
   border-top: 30px solid #f1f1f1;
@@ -1016,6 +3056,17 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+}
+
+.chats .back-to-account-section svg {
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  z-index: 3;
+  fill: #a8a8a8;
+  top: 10px;
+  left: 10px;
+  display: none;
 }
 
 .chats .every-thing-close-btn {
@@ -1043,7 +3094,7 @@ body {
 }
 
 .chats .every-thing-close-btn:hover {
-  background-color: red;
+  background-color: #D75A5A;
   color: #f1f1f1;
 }
 
@@ -1072,7 +3123,6 @@ body {
 
 .chats .text-section-chats {
   width: 630px;
-  padding: 10px 20px;
   display: none;
 }
 
@@ -1084,12 +3134,14 @@ body {
   margin: 0;
   font-size: 18px;
   font-weight: 600;
+  padding: 5px 20px 0px 20px;
 }
 
 .chats .chat-subtext {
   margin: 0;
   font-size: 14px;
   color: #a8a8a8;
+  padding: 0px 20px 5px 20px;
 }
 
 .chats .tool-section-chats {
@@ -1182,6 +3234,11 @@ body {
   min-height: 30px;
   font-size: 15px;
   padding-top: 16px;
+  display: none;
+}
+
+.chats .chat-textarea.active {
+  display: block;
 }
 
 .chats .chat-textarea::-webkit-input-placeholder {
@@ -1275,6 +3332,23 @@ body {
   height: 28px;
   fill: #40A7E3;
   cursor: pointer;
+}
+
+.chats .chatBtn {
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  display: none;
+}
+
+.chats .chatBtn.active {
+  display: block;
+}
+
+.chats .chat-button-img {
+  width: 27px;
+  height: 27px;
 }
 
 .chats-list {
@@ -1452,18 +3526,52 @@ body {
     width: 100%;
     display: block;
   }
+  .account-close-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .account.remove {
+    display: none;
+  }
   .account-input {
     width: 700px;
+  }
+  .every-thing-close-btn {
+    display: block !important;
   }
   .chats {
     display: none;
     width: 100%;
+  }
+  .chats.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .account-settings_wrapper {
     left: 200px !important;
   }
   .account-settings-edit-modal-wrapper {
     left: 400px !important;
+  }
+  .chats .every-thing-close-btn {
+    top: -50px;
+  }
+  .chats .chat-text {
+    padding-left: 50px;
+  }
+  .chats .chat-subtext {
+    padding-left: 50px;
+  }
+  .chats-user-modal-wrapper {
+    left: 50% !important;
+  }
+  .chats-user-modal-second-wrapper {
+    left: 50% !important;
+  }
+  .chats-user-modal-third-wrapper {
+    left: 50% !important;
   }
 }
 
@@ -1499,6 +3607,27 @@ body {
     width: 300px;
     height: 300px;
   }
+  .danny-account-image-modal-img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .sara-account-image-modal-img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .mark-account-image-modal-img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .user-phone-call-modal {
+    width: 370px;
+  }
+  .user-phone-call-modal-second {
+    width: 370px;
+  }
+  .user-phone-call-modal-third {
+    width: 370px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -1515,6 +3644,15 @@ body {
   .account-settings-edit-modal-wrapper {
     width: 300px !important;
     left: 200px !important;
+  }
+  .chats-user-modal-wrapper {
+    width: 300px;
+  }
+  .chats-user-modal-second-wrapper {
+    width: 300px;
+  }
+  .chats-user-modal-third-wrapper {
+    width: 300px;
   }
 }
 
@@ -1536,6 +3674,15 @@ body {
   .settings-owner-modal-img {
     width: 200px;
     height: 200px;
+  }
+  .chats-user-modal-wrapper {
+    width: 100%;
+  }
+  .chats-user-modal-second-wrapper {
+    width: 100%;
+  }
+  .chats-user-modal-third-wrapper {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */

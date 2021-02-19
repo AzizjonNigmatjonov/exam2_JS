@@ -23,13 +23,13 @@ body {
     background-color: $body-background-color;
 }
 
-.telegram {
-    background-color: red;
-}
+// .telegram {
+//     background-color: red;
+// }
 
-.container {
-    background-color: yellow;
-}
+// .container {
+//     background-color: yellow;
+// }
 
 .wrapper {
     display: flex;
@@ -46,6 +46,26 @@ body {
     width: 35%;
     height: 100%;
     position: relative;
+    &-close-btn {
+        font-size: 30px;
+        height: 30px;
+        width: 30px;
+        color: $close-btn-color;
+        position: absolute;
+        top: -40px;
+        right: 0px;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        transition: 0.1s;
+        cursor: pointer;
+        display: none;
+    }
+    &-close-btn:hover {
+        background-color: #D75A5A;
+        color: $border-top-color;
+    }
     &-header {
         padding: 5px 10px;
         display: flex;
@@ -150,6 +170,16 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    .back-to-account-section svg {
+        width: 24px;
+        height: 20px;
+        position: absolute;
+        z-index: 3;
+        fill: $most-used-gray;
+        top: 10px;
+        left: 10px;
+        display: none;
+    }
     .every-thing-close-btn {
         font-size: 30px;
         height: 30px;
@@ -167,7 +197,7 @@ body {
         cursor: pointer;
     }
     .every-thing-close-btn:hover {
-        background-color: red;
+        background-color: #D75A5A;
         color: $border-top-color;
     }
     &-header {
@@ -186,7 +216,6 @@ body {
     }
     .text-section-chats {
         width: 630px;
-        padding: 10px 20px;
         display: none;
     }
     .text-section-chats.active {
@@ -196,11 +225,13 @@ body {
         margin: 0;
         font-size: 18px;
         font-weight: 600;
+        padding: 5px 20px 0px 20px;
     }
     .chat-subtext {
         margin: 0;
         font-size: 14px;
         color: $most-used-gray;
+        padding: 0px 20px 5px 20px;
     }
     .tool-section-chats {
         display: flex;
@@ -270,6 +301,10 @@ body {
         min-height: 30px;
         font-size: 15px;
         padding-top: 16px;
+        display: none;
+    }
+    .chat-textarea.active {
+        display: block;
     }
     .chat-textarea::placeholder{
         font-size: 15px;
@@ -333,6 +368,26 @@ body {
         fill: #40A7E3;
         cursor: pointer;
     }
+    .chatBtn {
+        font-size: 24px;
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+        display: none;
+    }
+    .chatBtn.active {
+        display: block;
+    }
+    .chat-button-img {
+        width: 27px;
+        height: 27px;
+    }
+    // .chatBtn.first {
+    //     right: 190px;
+    // }
+    // .chatBtn.second {
+    //     right: 120px;
+    // }
     &-list {
         position: absolute;
         top: 60px;

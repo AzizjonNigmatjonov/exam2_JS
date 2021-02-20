@@ -3238,6 +3238,10 @@ body {
   display: none;
 }
 
+.chats .chat-textarea::-webkit-scrollbar {
+  display: none;
+}
+
 .chats .chat-textarea.active {
   display: block;
 }

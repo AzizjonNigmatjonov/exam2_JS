@@ -304,6 +304,9 @@ body {
         padding-top: 16px;
         display: none;
     }
+    .chat-textarea::-webkit-scrollbar {
+        display: none;
+    }
     .chat-textarea.active {
         display: block;
     }

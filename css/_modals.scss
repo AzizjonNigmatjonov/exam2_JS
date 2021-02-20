@@ -2001,3 +2001,25 @@
 .chats-user-modal-first-item:hover {
     background-color: $border-top-color;
 }
+
+// chats change list
+.chats-modal-change-list {
+    display: none;
+    background-color: $white;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    width: 170px;
+    padding: 5px 0px 5px 0px;
+    box-shadow: 0px 0px 2px 1px $light-gray;
+    z-index: 4;
+}
+.chats-modal-change-item{
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.chats-modal-change-item:hover {
+    background-color: $border-top-color;
+}

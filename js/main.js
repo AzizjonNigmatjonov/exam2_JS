@@ -177,7 +177,8 @@ let markPhoneModalCloseBtn = document.querySelector('.mark-account-image-modal-c
 
 // get chat back btn to account section
 let chatBtnToAccountBack = document.querySelector('.back-to-account-section svg');
-
+// get chats change list
+let chatsChangeModalList = document.querySelector('.chats-modal-change-list');
 // get chats change list btn
 let chatChangeListBtn = document.querySelector('.chat-settings-image');
 
@@ -776,7 +777,13 @@ listItemElements.forEach(function(e){
 
 // open chat change list
 function openChatChangeList() {
-    
+    chatsChangeModalList.style.display = 'block';
 }
 
+// close chat change list
+chatSectionsElement.addEventListener('mouseover', function(e) {
+    if (e.target == chatSectionsElement || e.target == chatListSecond || e.target == chatListThird || e.target == chatsList) {
+        chatsChangeModalList.style.display = 'none';
+    }
+})
 

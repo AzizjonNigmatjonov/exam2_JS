@@ -3574,8 +3574,8 @@ body {
   .chats-user-modal-third-wrapper {
     left: 50% !important;
   }
-  .back-to-account-section svg {
-    display: block !important;
+  .chats .back-to-account-section svg {
+    display: block;
   }
 }
 

@@ -300,20 +300,27 @@ function outsideClick(e){
         userAccountModalFirst.style.display = 'none';
     } else if (e.target == userPhoneCallModal) {
         userPhoneCallModal.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     } else if (e.target == saraAccountModal) {
         saraAccountModal.style.display = 'none';
     } else if (e.target == saraAccountPhoneCall) {
         saraAccountPhoneCall.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     } else if (e.target == saraAccountModalMainImg) {
         saraAccountModalMainImg.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     } else if (e.target == markAccountModal) {
         markAccountModal.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     } else if (e.target == markPhoneModalWrapper) {
         markPhoneModalWrapper.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     } else if (e.target == markAccountModalMainImage) {
         markAccountModalMainImage.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     } else if (e.target == userAccountModalMainImage) {
         userAccountModalMainImage.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'block';
     }
 }
 
@@ -638,11 +645,13 @@ function userPhoneCall() {
     userPhoneCallModal.style.display = 'block';
     phoneCallAudio.play();
     userAccountModalFirst.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'none';
 }
 
 // close user phone call modal by btn
 function closeUserPhoneCall() {
     userPhoneCallModal.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'block';
 }
 
 // make phone call modal big screen
@@ -678,6 +687,7 @@ function toPhoneCallSara() {
     saraAccountPhoneCall.style.display = 'block';
     phoneCallAudio.play();
     saraAccountModal.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'none';
 }
 
 // open user account modal main image
@@ -686,22 +696,26 @@ function openUserAccountModalMainImage() {
     userAccountModalFirst.style.display = 'none';
     let userAccountModalImg = document.querySelector('.mark-account-image-modal-img')
     userAccountModalImg.style.zIndex = 2;
+    chatBtnToAccountBack.style.display = 'none';
 }
 
 // close user account modal main image
 function closeUserAccountModalMainImage() {
     userAccountModalMainImage.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'block';
 }
 
 // close sara phone call
 function closeSaraPhoneCall() {
     saraAccountPhoneCall.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'block';
 }
 
 // open sara account main img
 function openSaraAccountMainImg() {
     saraAccountModalMainImg.style.display = 'block';
     saraAccountModal.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'none';
 }
 
 
@@ -727,11 +741,13 @@ function openmarkPhoneModalWrapper() {
     markPhoneModalWrapper.style.display = 'block';
     markAccountModal.style.display = 'none';
     phoneCallAudio.play();
+    chatBtnToAccountBack.style.display = 'none';
 }
 
 // close mark phone modal by btn
 function closeMakrPhoneModal() {
     markPhoneModalWrapper.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'block';
 }
 
 // make bigger mark phone modal by btn
@@ -747,6 +763,7 @@ function toMiniScreenMarkPhoneModal(){
 // end mark phone modal by btn
 function closeMarkPhoneModal() {
     markPhoneModal.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'block';
 }
 
 // open mark account modal main img
@@ -754,11 +771,13 @@ function openMarkAccountModalMainImg() {
     markAccountModalMainImage.style.display = 'block';
     markAccountModal.style.display = 'none';
     markAccountModalMainImage.style.zIndex = 2;
+    chatBtnToAccountBack.style.display = 'none';
 }
 
 // 
 function closeMarkPhoneModalByBtn() {
     markAccountModalMainImage.style.display = 'none';
+    chatBtnToAccountBack.style.display = 'block';
 }
 
 // back to account section from chats section

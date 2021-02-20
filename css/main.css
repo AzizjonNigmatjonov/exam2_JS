@@ -3470,8 +3470,8 @@ body {
 .chats .chat-delele-list {
   background-color: white;
   position: absolute;
-  top: 15px;
-  right: -140px;
+  top: 25px;
+  right: -100px;
   width: 170px;
   padding: 5px 0px 5px 0px;
   -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
@@ -3489,16 +3489,14 @@ body {
 }
 
 .chats .chat-delete-item:hover {
-  background-color: #D75A5A;
-  color: white;
-  font-weight: 600;
+  background-color: #f1f1f1;
 }
 
 .chats .chat-delele-list-second {
   background-color: white;
   position: absolute;
-  top: 15px;
-  right: -140px;
+  top: 25px;
+  right: -100px;
   width: 170px;
   padding: 5px 0px 5px 0px;
   -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
@@ -3516,16 +3514,14 @@ body {
 }
 
 .chats .chat-delete-item-second:hover {
-  background-color: #D75A5A;
-  color: white;
-  font-weight: 600;
+  background-color: #f1f1f1;
 }
 
 .chats .chat-delele-list-third {
   background-color: white;
   position: absolute;
-  top: 15px;
-  right: -140px;
+  top: 25px;
+  right: -100px;
   width: 170px;
   padding: 5px 0px 5px 0px;
   -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
@@ -3543,7 +3539,7 @@ body {
 }
 
 .chats .chat-delete-item-third:hover {
-  background-color: #D75A5A;
+  background-color: #f1f1f1;
   color: white;
   font-weight: 600;
 }

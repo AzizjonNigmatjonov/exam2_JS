@@ -1176,6 +1176,7 @@ body {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
 
 .chats-user-modal-name {
@@ -1507,6 +1508,7 @@ body {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
 
 .chats-user-modal-second-name {

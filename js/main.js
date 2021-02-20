@@ -519,7 +519,7 @@ listItemElements.forEach(function (e) {
         // show chats footer
         chatsFooter.style.display = 'flex';
         // show chats list
-        chatsList.style.display = 'block';
+        // chatsList.style.display = 'block';
     })
 })
 
@@ -560,7 +560,7 @@ document.body.addEventListener('keyup', e => {
         userAccountModalMainImage.style.display = 'none';
         chatListSecond.style.display = 'none';
         chatListThird.style.display = 'none';
-        chatBtnToAccountBack.style.display = 'none';
+        chatBtnToAccountBack.style.display = 'none'
     }
 })
 

@@ -462,56 +462,56 @@ listItemElements.forEach(function (e) {
         chatsTextElements.forEach(function(chat) {
             if (chat == targetText) {
                 chat.classList.add('active');
-            } else {
-                chat.classList.remove('active');
-            }
-        })
-        chatsLists.forEach(function(list) {
-            if (list.id == targetText.id) {
-                list.classList.add('active');
-                let chatButtons = document.querySelectorAll('.chatBtn');
-                chatButtons.forEach(function(btn) {
-                    if (btn.id == targetText.id) {
-                        btn.classList.add('active')
-                        let messages = [];
-                        let textAreaElements = document.querySelectorAll('.chat-textarea');
-                        textAreaElements.forEach(function(area) {
-                            if (area.id == targetText.id) {
-                                area.classList.add('active')
-                                btn.addEventListener('click', () => {
-                                    if (area.value) {
-                                        let newItem = document.createElement('li');
-                                    newItem.classList.add('chat-item');
-                                    let newPelement = document.createElement('p');
-                                    newPelement.textContent = area.value;
-                                    newPelement.classList.add('chat-send-text');
-                                    let timeElement = document.createElement('time');
-                                    timeElement.textContent = moment().format('h:mm A');
-                                    timeElement.classList.add('chat-text-time');
-                                    let tick = document.querySelector('.chat-text-img');
-                                    let newTick = tick.cloneNode(true)
-                                    newPelement.appendChild(newTick);
-                                    newPelement.appendChild(timeElement);
-                                    newItem.appendChild(newPelement);
-                                    list.appendChild(newItem);
-                                    area.value = '';
-                                    messages.push({
-                                        id: messages.length + 1,
-                                    })
-                                    newItem.setAttribute('id', `message#${messages.length + 1}`);
-                                    window.location.href = `#message#${messages.length + 1}`;
+                chatsLists.forEach(function(list) {
+                    if (list.id == targetText.id) {
+                        list.classList.add('active');
+                        let chatButtons = document.querySelectorAll('.chatBtn');
+                        chatButtons.forEach(function(btn) {
+                            if (btn.id == targetText.id) {
+                                btn.classList.add('active')
+                                let messages = [];
+                                let textAreaElements = document.querySelectorAll('.chat-textarea');
+                                textAreaElements.forEach(function(area) {
+                                    if (area.id == targetText.id) {
+                                        area.classList.add('active')
+                                        btn.addEventListener('click', () => {
+                                            if (area.value) {
+                                                let newItem = document.createElement('li');
+                                            newItem.classList.add('chat-item');
+                                            let newPelement = document.createElement('p');
+                                            newPelement.textContent = area.value;
+                                            newPelement.classList.add('chat-send-text');
+                                            let timeElement = document.createElement('time');
+                                            timeElement.textContent = moment().format('h:mm A');
+                                            timeElement.classList.add('chat-text-time');
+                                            let tick = document.querySelector('.chat-text-img');
+                                            let newTick = tick.cloneNode(true)
+                                            newPelement.appendChild(newTick);
+                                            newPelement.appendChild(timeElement);
+                                            newItem.appendChild(newPelement);
+                                            list.appendChild(newItem);
+                                            area.value = '';
+                                            messages.push({
+                                                id: messages.length + 1,
+                                            })
+                                            newItem.setAttribute('id', `message#${messages.length + 1}`);
+                                            window.location.href = `#message#${messages.length + 1}`;
+                                            }
+                                        })    
+                                    } else {
+                                        area.classList.remove('active')
                                     }
-                                })    
+                                })
                             } else {
-                                area.classList.remove('active')
+                                btn.classList.remove('active')
                             }
                         })
                     } else {
-                        btn.classList.remove('active')
+                        list.classList.remove('active');
                     }
                 })
             } else {
-                list.classList.remove('active');
+                chat.classList.remove('active');
             }
         })
         // show chats header
@@ -538,7 +538,8 @@ listItemElements.forEach(function (e) {
 //     })
 // })
 
-
+let chatListSecond = document.querySelector('.chats-list.second');
+let chatListThird = document.querySelector('.chats-list.third');
 
 // close every thing by escape
 document.body.addEventListener('keyup', e => {
@@ -557,6 +558,8 @@ document.body.addEventListener('keyup', e => {
         markAccountModal.style.display = 'none';
         markPhoneModalWrapper.style.display = 'none';
         userAccountModalMainImage.style.display = 'none';
+        chatListSecond.style.display = 'none';
+        chatListThird.style.display = 'none';
     }
 })
 

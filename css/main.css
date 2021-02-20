@@ -3559,8 +3559,8 @@ body {
 .chats .chat-delele-list {
   background-color: white;
   position: absolute;
-  top: 25px;
-  right: -100px;
+  top: 46px;
+  right: 110px;
   width: 170px;
   padding: 5px 0px 5px 0px;
   -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
@@ -3596,8 +3596,8 @@ body {
 .chats .chat-delele-list-second {
   background-color: white;
   position: absolute;
-  top: 25px;
-  right: -100px;
+  top: 46px;
+  right: 110px;
   width: 170px;
   padding: 5px 0px 5px 0px;
   -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;
@@ -3621,8 +3621,8 @@ body {
 .chats .chat-delele-list-third {
   background-color: white;
   position: absolute;
-  top: 25px;
-  right: -100px;
+  top: 46px;
+  right: 110px;
   width: 170px;
   padding: 5px 0px 5px 0px;
   -webkit-box-shadow: 0px 0px 2px 1px #BDBDBD;

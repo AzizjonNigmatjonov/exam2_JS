@@ -563,10 +563,8 @@ listItemElements.forEach(function (e) {
                                                             })
                                                         }
                                                     })
-                                                    list.addEventListener('mouseover', e => {
-                                                        if (e.target == list) {
-                                                            contextMenu.style.display = 'none';
-                                                        }
+                                                    document.body.addEventListener('click', e => {
+                                                        contextMenu.style.display = 'none';
                                                     })
                                                 })
                                             }
@@ -908,10 +906,8 @@ chatItem.addEventListener('contextmenu', e => {
             })
         }
     })
-    chatsList.addEventListener('mouseover', e => {
-        if (e.target == chatsList) {
-            contextMenu.style.display = 'none';
-        }
+    document.body.addEventListener('click', e => {
+        contextMenu.style.display = 'none';
     })
 })
 
@@ -970,10 +966,8 @@ chatSecondListItem.addEventListener('contextmenu', e => {
         }
     })
     let newSecondList = $('.chats-list-sara');
-    newSecondList.addEventListener('mouseover', e => {
-        if (e.target == newSecondList) {
-            contextMenu.style.display = 'none';
-        }
+    document.body.addEventListener('click', e => {
+        contextMenu.style.display = 'none';
     })
 })
 
@@ -1029,10 +1023,8 @@ chatThirdListItem.addEventListener('contextmenu', e => {
         }
     })
     let newThirdList = $('.chats-list-mark')
-    newThirdList.addEventListener('mouseover', e => {
-        if (e.target == newThirdList) {
-            contextMenu.style.display = 'none';
-        }
+    document.body.addEventListener('click', e => {
+        contextMenu.style.display = 'none';
     })
 })
 

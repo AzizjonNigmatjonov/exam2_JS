@@ -3064,6 +3064,93 @@ body {
   background-color: #f1f1f1;
 }
 
+.chat-message-delete-permition-modal {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  -webkit-animation-name: sidebarOpen;
+          animation-name: sidebarOpen;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.chat-message-delete-permition-modal-wrapper {
+  width: 350px;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  display: inline-block;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  padding: 40px 20px;
+}
+
+.chat-message-delete-permition-modal-text {
+  font-size: 15px;
+}
+
+.chat-message-delete-permition-modal-footer {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chat-message-delete-permition-modal-not-btn {
+  outline: none !important;
+  border: none !important;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #168ACD;
+  font-weight: 600;
+  font-size: 18px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chat-message-delete-permition-modal-not-btn:hover {
+  background-color: #E3F1FA;
+}
+
+.chat-message-delete-permition-modal-yes-btn {
+  outline: none !important;
+  border: none !important;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #168ACD;
+  font-weight: 600;
+  font-size: 18px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chat-message-delete-permition-modal-yes-btn:hover {
+  background-color: #E3F1FA;
+}
+
 /* chats section */
 .chats {
   border-top: 30px solid #f1f1f1;
@@ -3488,6 +3575,18 @@ body {
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.chats .chat-message-delete {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.chats .chat-message-delete:hover {
+  background-color: #f1f1f1;
 }
 
 .chats .chat-delete-item:hover {

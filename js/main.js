@@ -182,6 +182,22 @@ let chatsChangeModalList = document.querySelector('.chats-modal-change-list');
 // get chats change list btn
 let chatChangeListBtn = document.querySelector('.chat-settings-image');
 
+// get chat message delete modal
+let chatsMessagesDeleteModal = $('.chat-message-delete-permition-modal');
+// get chat message delete modal wrapper
+let chatsMessagesDeleteModalWrapper = $('.chat-message-delete-permition-modal-wrapper');
+// get chat message delete modal yes btn
+let chatsMessagesDeleteModalYesBtn = $('.chat-message-delete-permition-modal-yes-btn');
+// get chat message delete modal Not btn
+let chatsMessagesDeleteModalNotBtn = $('.chat-message-delete-permition-modal-not-btn');
+// get chats message delet list
+let chatsMessageDeleteListSecond = $('.chat-delele-list-second');
+
+// get chats message delete list item btn
+let chatsListMessageDeleteBtn = $('#chat-deleter');
+
+// listen chats message delete list item btn
+// chatsListMessageDeleteBtn.addEventListener('click', openChatMessageDeleterModal);
 // listen input form to search accounts
 searchBar.addEventListener('keyup', searchAccounts);
 // listen show sidebar click
@@ -275,6 +291,7 @@ markPhoneModalPhoneBtn.addEventListener('click', closeMarkPhoneModal);
 markAccountModalMainImageBtn.addEventListener('click', openMarkAccountModalMainImg);
 // listen mark phone modal close btn
 markPhoneModalCloseBtn.addEventListener('click', closeMarkPhoneModalByBtn);
+
 
 // listen chat btn back to account section
 chatBtnToAccountBack.addEventListener('click', backToAccountSection);
@@ -513,7 +530,7 @@ listItemElements.forEach(function (e) {
                                                     newDeleteItem3.classList.add('chat-delete-item');
                                                     newDeleteItem4.classList.add('chat-delete-item');
                                                     newDeleteItem5.classList.add('chat-delete-item');
-                                                    newDeleteItem6.classList.add('chat-delete-item');
+                                                    newDeleteItem6.classList.add('chat-message-delete');
                                                     newDeleteItem7.classList.add('chat-delete-item');
                                                     newDeleteItem.textContent = 'Reply';
                                                     newDeleteItem2.textContent = 'Edit';
@@ -533,14 +550,17 @@ listItemElements.forEach(function (e) {
                                                     // newDeleteList.style.display = 'block';
                                                     let contextMenu = newDeleteList;
                                                     newDeleteList.addEventListener('click', e => {
-                                                        if(e.target.className == 'chat-delete-item') {
-                                                            let con = confirm('Do You Want To Delete Message');
-                                                            if (con == true) {
-                                                                let parentElement = e.target.parentElement.parentElement;
+                                                        if(e.target.className == 'chat-message-delete') {
+                                                            let parentElement = e.target.parentElement.parentElement;
+                                                            chatsMessagesDeleteModal.style.display = 'block';
+                                                            newDeleteList.style.display = 'none'
+                                                            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
                                                                 list.removeChild(parentElement);
-                                                            } else {
-                                                                return false
-                                                            }
+                                                                chatsMessagesDeleteModal.style.display = 'none';
+                                                            })
+                                                            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                                                                chatsMessagesDeleteModal.style.display = 'none';
+                                                            })
                                                         }
                                                     })
                                                     list.addEventListener('mouseover', e => {
@@ -855,7 +875,7 @@ chatItem.addEventListener('contextmenu', e => {
     newDeleteItem3.classList.add('chat-delete-item');
     newDeleteItem4.classList.add('chat-delete-item');
     newDeleteItem5.classList.add('chat-delete-item');
-    newDeleteItem6.classList.add('chat-delete-item');
+    newDeleteItem6.classList.add('chat-message-delete');
     newDeleteItem7.classList.add('chat-delete-item');
     newDeleteItem.textContent = 'Reply';
     newDeleteItem2.textContent = 'Edit';
@@ -875,14 +895,17 @@ chatItem.addEventListener('contextmenu', e => {
     // newDeleteList.style.display = 'block';
     let contextMenu = newDeleteList;
     newDeleteList.addEventListener('click', e => {
-        if(e.target.className == 'chat-delete-item') {
-            let con = confirm('Do You Want To Delete Message');
-            if (con == true) {
-                let parentElement = e.target.parentElement.parentElement;
+        if(e.target.className == 'chat-message-delete') {
+            let parentElement = e.target.parentElement.parentElement;
+            chatsMessagesDeleteModal.style.display = 'block';
+            newDeleteList.style.display = 'none'
+            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
                 chatsList.removeChild(parentElement);
-            } else {
-                return false
-            }
+                chatsMessagesDeleteModal.style.display = 'none';
+            })
+            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                chatsMessagesDeleteModal.style.display = 'none';
+            })
         }
     })
     chatsList.addEventListener('mouseover', e => {
@@ -911,7 +934,7 @@ chatSecondListItem.addEventListener('contextmenu', e => {
     newDeleteItem3.classList.add('chat-delete-item-second');
     newDeleteItem4.classList.add('chat-delete-item-second');
     newDeleteItem5.classList.add('chat-delete-item-second');
-    newDeleteItem6.classList.add('chat-delete-item-second');
+    newDeleteItem6.classList.add('chat-message-delete');
     newDeleteItem7.classList.add('chat-delete-item-second');
     newDeleteItem.textContent = 'Reply';
     newDeleteItem2.textContent = 'Edit';
@@ -919,6 +942,7 @@ chatSecondListItem.addEventListener('contextmenu', e => {
     newDeleteItem4.textContent = 'Cpy Text';
     newDeleteItem5.textContent = 'Forward';
     newDeleteItem6.textContent = 'Delete';
+    newDeleteItem6.setAttribute('id', 'chat-teleter')
     newDeleteItem7.textContent = 'Select Message';
     newDeleteList.appendChild(newDeleteItem);
     newDeleteList.appendChild(newDeleteItem2);
@@ -931,15 +955,18 @@ chatSecondListItem.addEventListener('contextmenu', e => {
     // newDeleteList.style.display = 'block';
     let contextMenu = newDeleteList;
     newDeleteList.addEventListener('click', e => {
-        if(e.target.className == 'chat-delete-item-second') {
-            let con = confirm('Do You Want To Delete Message');
-            if (con == true) {
-                let parentElement = e.target.parentElement.parentElement;
-                let newSecondChatList = e.target.parentElement.parentElement.parentElement;
+        if(e.target.className == 'chat-message-delete') {
+            let parentElement = e.target.parentElement.parentElement;
+            let newSecondChatList = e.target.parentElement.parentElement.parentElement;
+            chatsMessagesDeleteModal.style.display = 'block';
+            newDeleteList.style.display = 'none'
+            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
                 newSecondChatList.removeChild(parentElement);
-            } else {
-                return false
-            }
+                chatsMessagesDeleteModal.style.display = 'none';
+            })
+            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                chatsMessagesDeleteModal.style.display = 'none';
+            })
         }
     })
     let newSecondList = $('.chats-list-sara');
@@ -967,7 +994,7 @@ chatThirdListItem.addEventListener('contextmenu', e => {
     newDeleteItem3.classList.add('chat-delete-item-third');
     newDeleteItem4.classList.add('chat-delete-item-third');
     newDeleteItem5.classList.add('chat-delete-item-third');
-    newDeleteItem6.classList.add('chat-delete-item-third');
+    newDeleteItem6.classList.add('chat-message-delete');
     newDeleteItem7.classList.add('chat-delete-item-third');
     newDeleteItem.textContent = 'Reply';
     newDeleteItem2.textContent = 'Edit';
@@ -987,15 +1014,18 @@ chatThirdListItem.addEventListener('contextmenu', e => {
     // newDeleteList.style.display = 'block';
     let contextMenu = newDeleteList;
     newDeleteList.addEventListener('click', e => {
-        if(e.target.className == 'chat-delete-item-third') {
-            let con = confirm('Do You Want To Delete Message');
-            if (con == true) {
-                let parentElement = e.target.parentElement.parentElement;
-                let newThirdChatList = e.target.parentElement.parentElement.parentElement;
+        if(e.target.className == 'chat-message-delete') {
+            let parentElement = e.target.parentElement.parentElement;
+            let newThirdChatList = e.target.parentElement.parentElement.parentElement;
+            chatsMessagesDeleteModal.style.display = 'block';
+            newDeleteList.style.display = 'none'
+            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
                 newThirdChatList.removeChild(parentElement);
-            } else {
-                return false
-            }
+                chatsMessagesDeleteModal.style.display = 'none';
+            })
+            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                chatsMessagesDeleteModal.style.display = 'none';
+            })
         }
     })
     let newThirdList = $('.chats-list-mark')
@@ -1005,3 +1035,8 @@ chatThirdListItem.addEventListener('contextmenu', e => {
         }
     })
 })
+
+// function openChatMessageDeleterModal() {
+//     chatsMessagesDeleteModal.style.display = 'block';
+//     chatsMessageDeleteListSecond.style.display = 'none';
+// }

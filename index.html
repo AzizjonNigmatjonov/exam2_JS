@@ -19,6 +19,20 @@
         <div class="container">
             <audio class="audio-phone-call" src="./audio/beep.mp3"></audio>
             <div class="wrapper">
+                <div class="chat-message-delete-permition-modal">
+                    <div class="chat-message-delete-permition-modal-wrapper">
+                        <div class="chat-message-delete-permition-modal-header">
+                            <p class="chat-message-delete-permition-modal-text">
+                                Do you want to delete this message?
+                            </p>
+                        </div>
+                        <div class="chat-message-delete-permition-modal-footer">
+                            <button class="chat-message-delete-permition-modal-not-btn" id="no">Cancel</button>
+                            <button class="chat-message-delete-permition-modal-yes-btn" id="ok">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="sara-account-image-modal">
                     <span class="sara-account-image-modal-close-btn">&times;</span>
                     <img src="./img/sara-img.jpg" alt="Photo" class="sara-account-image-modal-img">
@@ -2691,7 +2705,7 @@
 <ul class="chats-list first" id="danny">
     <li class="chat-item">
         <!-- <ul class="chat-delele-list">
-            <li class="chat-delete-item">
+            <li class="chat-delete-item " id="chat-deleter">
                 Delete
             </li>
         </ul> -->
@@ -2760,7 +2774,7 @@
             <li class="chat-delete-item-second">
                 Forward
             </li>
-            <li class="chat-delete-item-second">
+            <li class="chat-delete-item-second chat-message-delete" id="chat-deleter">
                 Delete
             </li>
             <li class="chat-delete-item-second">

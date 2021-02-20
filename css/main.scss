@@ -491,6 +491,15 @@ body {
                         cursor: pointer;
                         transition: 0.2s; 
                     }
+                    .chat-message-delete {
+                        padding: 5px 10px;
+                        font-size: 14px;
+                        cursor: pointer;
+                        transition: 0.2s; 
+                    }
+                    .chat-message-delete:hover {
+                        background-color: $border-top-color;
+                    }
                     .chat-delete-item:hover {
                         background-color: $border-top-color;
                     }

@@ -49,7 +49,7 @@ let settingsRemoveProfile = document.getElementById('account-settings-remove-ite
 // get chats search loop
 let chatsSearch = document.querySelector('.chat-loop-image');
 // get chats list 
-let chatsList = document.querySelector('.chats-list');
+let chatsList = document.querySelector('.chats-list.first');
 // get chat item
 let chatItem = document.querySelector('.chat-item');
 // get chat send btn
@@ -478,25 +478,53 @@ listItemElements.forEach(function (e) {
                                         btn.addEventListener('click', () => {
                                             if (area.value) {
                                                 let newItem = document.createElement('li');
-                                            newItem.classList.add('chat-item');
-                                            let newPelement = document.createElement('p');
-                                            newPelement.textContent = area.value;
-                                            newPelement.classList.add('chat-send-text');
-                                            let timeElement = document.createElement('time');
-                                            timeElement.textContent = moment().format('h:mm A');
-                                            timeElement.classList.add('chat-text-time');
-                                            let tick = document.querySelector('.chat-text-img');
-                                            let newTick = tick.cloneNode(true)
-                                            newPelement.appendChild(newTick);
-                                            newPelement.appendChild(timeElement);
-                                            newItem.appendChild(newPelement);
-                                            list.appendChild(newItem);
-                                            area.value = '';
-                                            messages.push({
-                                                id: messages.length + 1,
-                                            })
-                                            newItem.setAttribute('id', `message#${messages.length + 1}`);
-                                            window.location.href = `#message#${messages.length + 1}`;
+                                                newItem.classList.add('chat-item');
+                                                let newPelement = document.createElement('p');
+                                                newPelement.textContent = area.value;
+                                                newPelement.classList.add('chat-send-text');
+                                                let timeElement = document.createElement('time');
+                                                timeElement.textContent = moment().format('h:mm A');
+                                                timeElement.classList.add('chat-text-time');
+                                                let tick = document.querySelector('.chat-text-img');
+                                                let newTick = tick.cloneNode(true)
+                                                newPelement.appendChild(newTick);
+                                                newPelement.appendChild(timeElement);
+                                                newItem.appendChild(newPelement);
+                                                list.appendChild(newItem);
+                                                area.value = '';
+                                                messages.push({
+                                                    id: messages.length + 1,
+                                                })
+                                                newItem.setAttribute('id', `message#${messages.length + 1}`);
+                                                window.location.href = `#message#${messages.length + 1}`;
+                                                newItem.addEventListener('contextmenu', e => {
+                                                    e.preventDefault()
+                                                    let newDeleteList = document.createElement('ul');
+                                                    newDeleteList.classList.add('chat-delele-list');
+                                                    let newDeleteItem = document.createElement('li');
+                                                    newDeleteItem.classList.add('chat-delete-item');
+                                                    newDeleteItem.textContent = 'Delete'
+                                                    newDeleteList.appendChild(newDeleteItem);
+                                                    newItem.appendChild(newDeleteList);
+                                                    // newDeleteList.style.display = 'block';
+                                                    let contextMenu = newDeleteList;
+                                                    newDeleteList.addEventListener('click', e => {
+                                                        if(e.target.className == 'chat-delete-item') {
+                                                            let con = confirm('Do You Want To Delete Message');
+                                                            if (con == true) {
+                                                                let parentElement = e.target.parentElement.parentElement;
+                                                                list.removeChild(parentElement);
+                                                            } else {
+                                                                return false
+                                                            }
+                                                        }
+                                                    })
+                                                    list.addEventListener('mouseover', e => {
+                                                        if (e.target == list) {
+                                                            contextMenu.style.display = 'none';
+                                                        }
+                                                    })
+                                                })
                                             }
                                         })    
                                     } else {
@@ -787,3 +815,97 @@ chatSectionsElement.addEventListener('mouseover', function(e) {
     }
 })
 
+chatItem.addEventListener('contextmenu', e => {
+    e.preventDefault()
+    let newDeleteList = document.createElement('ul');
+    newDeleteList.classList.add('chat-delele-list');
+    let newDeleteItem = document.createElement('li');
+    newDeleteItem.classList.add('chat-delete-item');
+    newDeleteItem.textContent = 'Delete'
+    newDeleteList.appendChild(newDeleteItem);
+    chatItem.appendChild(newDeleteList);
+    // newDeleteList.style.display = 'block';
+    let contextMenu = newDeleteList;
+    newDeleteList.addEventListener('click', e => {
+        if(e.target.className == 'chat-delete-item') {
+            let con = confirm('Do You Want To Delete Message');
+            if (con == true) {
+                let parentElement = e.target.parentElement.parentElement;
+                chatsList.removeChild(parentElement);
+            } else {
+                return false
+            }
+        }
+    })
+    chatsList.addEventListener('mouseover', e => {
+        if (e.target == chatsList) {
+            contextMenu.style.display = 'none';
+        }
+    })
+})
+
+
+// get chats list second item
+let chatSecondListItem = $('.chat-item-sara');
+chatSecondListItem.addEventListener('contextmenu', e => {
+    e.preventDefault()
+    let newDeleteList = document.createElement('ul');
+    newDeleteList.classList.add('chat-delele-list-second');
+    let newDeleteItem = document.createElement('li');
+    newDeleteItem.classList.add('chat-delete-item-second');
+    newDeleteItem.textContent = 'Delete'
+    newDeleteList.appendChild(newDeleteItem);
+    chatSecondListItem.appendChild(newDeleteList);
+    // newDeleteList.style.display = 'block';
+    let contextMenu = newDeleteList;
+    newDeleteList.addEventListener('click', e => {
+        if(e.target.className == 'chat-delete-item-second') {
+            let con = confirm('Do You Want To Delete Message');
+            if (con == true) {
+                let parentElement = e.target.parentElement.parentElement;
+                let newSecondChatList = e.target.parentElement.parentElement.parentElement;
+                newSecondChatList.removeChild(parentElement);
+            } else {
+                return false
+            }
+        }
+    })
+    let newSecondList = $('.chats-list-sara');
+    newSecondList.addEventListener('mouseover', e => {
+        if (e.target == newSecondList) {
+            contextMenu.style.display = 'none';
+        }
+    })
+})
+
+let chatThirdListItem = $('.chat-item-mark');
+chatThirdListItem.addEventListener('contextmenu', e => {
+    e.preventDefault()
+    let newDeleteList = document.createElement('ul');
+    newDeleteList.classList.add('chat-delele-list-third');
+    let newDeleteItem = document.createElement('li');
+    newDeleteItem.classList.add('chat-delete-item-third');
+    newDeleteItem.textContent = 'Delete'
+    newDeleteList.appendChild(newDeleteItem);
+    chatThirdListItem.appendChild(newDeleteList);
+    // newDeleteList.style.display = 'block';
+    let contextMenu = newDeleteList;
+    newDeleteList.addEventListener('click', e => {
+        if(e.target.className == 'chat-delete-item-third') {
+            let con = confirm('Do You Want To Delete Message');
+            if (con == true) {
+                let parentElement = e.target.parentElement.parentElement;
+                let newThirdChatList = e.target.parentElement.parentElement.parentElement;
+                newThirdChatList.removeChild(parentElement);
+            } else {
+                return false
+            }
+        }
+    })
+    let newThirdList = $('.chats-list-mark')
+    newThirdList.addEventListener('mouseover', e => {
+        if (e.target == newThirdList) {
+            contextMenu.style.display = 'none';
+        }
+    })
+})

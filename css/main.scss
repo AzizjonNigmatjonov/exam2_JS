@@ -176,9 +176,10 @@ body {
         position: absolute;
         z-index: 3;
         fill: $most-used-gray;
-        top: 10px;
+        top: 14px;
         left: 10px;
         display: none;
+        cursor: pointer;
     }
     .every-thing-close-btn {
         font-size: 30px;

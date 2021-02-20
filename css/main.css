@@ -3064,9 +3064,10 @@ body {
   position: absolute;
   z-index: 3;
   fill: #a8a8a8;
-  top: 10px;
+  top: 14px;
   left: 10px;
   display: none;
+  cursor: pointer;
 }
 
 .chats .every-thing-close-btn {

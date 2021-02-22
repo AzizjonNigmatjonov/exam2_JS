@@ -568,467 +568,467 @@ listItemElements.forEach(function (e) {
                                                     })
                                                 })
                                             }
-                                        })    
-                                    } else {
-                                        area.classList.remove('active')
-                                    }
-                                })
-                            } else {
-                                btn.classList.remove('active')
-                            }
-                        })
-                    } else {
-                        list.classList.remove('active');
-                    }
-                })
-            } else {
-                chat.classList.remove('active');
+                                        }) 
+                                        } else {
+                                            area.classList.remove('active')
+                                        }
+                                    })
+                                } else {
+                                    btn.classList.remove('active')
+                                }
+                            })
+                        } else {
+                            list.classList.remove('active');
+                        }
+                    })
+                } else {
+                    chat.classList.remove('active');
+                }
+            })
+            // show chats header
+            chatsHeader.style.display = 'flex';
+            // show chats footer
+            chatsFooter.style.display = 'flex';
+            // show chats list
+            // chatsList.style.display = 'block';
+        })
+    })
+    
+    
+    // event.target.parentNode.parentNode.dataset.target == '#sara' || event.target.dataset.target == '#sara'
+    
+    // let dannyList = document.querySelector('#danny')
+    // console.log(dannyList.dataset.target);
+    // listItemElements.forEach(function (item) {
+    //     item.addEventListener('click', event => {
+    //         console.log(event.target.);
+    //         if (event.target.parentNode.parentNode.dataset.target == dannyList.dataset.target || event.target.dataset.target == dannyList.dataset.target) {
+    //             console.log(`ha`);
+    
+    //         }
+    //     })
+    // })
+    
+    let chatListSecond = document.querySelector('.chats-list.second');
+    let chatListThird = document.querySelector('.chats-list.third');
+    
+    // close every thing by escape
+    document.body.addEventListener('keyup', e => {
+        if (e.keyCode == 27) {
+            chatsHeader.style.display = 'none';
+            chatsFooter.style.display = 'none';
+            chatsList.style.display = 'none';
+            accountSidebar.style.display = 'none';
+            sidebarSettings.style.display = 'none';
+            accountSettingsEditModal.style.display = 'none';
+            userAccountModalFirst.style.display = 'none';
+            saraAccountModal.style.display = 'none';
+            saraAccountPhoneCall.style.display = 'none';
+            saraAccountModalMainImg.style.display = 'none';
+            userPhoneCallModal.style.display = 'none';
+            markAccountModal.style.display = 'none';
+            markPhoneModalWrapper.style.display = 'none';
+            userAccountModalMainImage.style.display = 'none';
+            chatListSecond.style.display = 'none';
+            chatListThird.style.display = 'none';
+            chatBtnToAccountBack.style.display = 'none'
+        }
+    })
+    
+    // close every thing by btn
+    escapeBtn.addEventListener('click', logOut);
+    let telegramCloseBtn = document.querySelector('.account-close-btn');
+    telegramCloseBtn.addEventListener('click', () => {
+        logOut()
+    })
+    
+    function logOut() {
+        telegram.style.display = 'none';
+    }
+    // log out by settings reomove item
+    function alert() {
+        let confirmation = confirm('Are you sure to log out from telegram?');
+        if(confirmation == true) {
+            logOut()
+        }
+    }
+    
+    // // press account
+    // let liId = [];
+    // listItemElements.forEach(function(li){
+    //     li.addEventListener('click', function(e){
+    //         liId.push(e);
+    //         li.setAttribute('Id', liId.length + 1);
+    //     })
+    // })
+    
+    // query function
+    function $(element) {
+        return document.querySelector(element)
+    }
+    
+    
+    // show users info modal
+    chatsTextElements.forEach(function(chat) {
+        chat.addEventListener('click', e => {
+            if (e.target.parentNode.id == 'danny') {
+                userAccountModalFirst.style.display = 'block';
+            } else if (e.target.parentNode.id == 'sara') {
+                saraAccountModal.style.display = 'block';
+            } else if (e.target.parentNode.id == 'mark') {
+                markAccountModal.style.display = 'block';
             }
         })
-        // show chats header
-        chatsHeader.style.display = 'flex';
-        // show chats footer
-        chatsFooter.style.display = 'flex';
-        // show chats list
-        // chatsList.style.display = 'block';
     })
-})
-
-
-// event.target.parentNode.parentNode.dataset.target == '#sara' || event.target.dataset.target == '#sara'
-
-// let dannyList = document.querySelector('#danny')
-// console.log(dannyList.dataset.target);
-// listItemElements.forEach(function (item) {
-//     item.addEventListener('click', event => {
-//         console.log(event.target.);
-//         if (event.target.parentNode.parentNode.dataset.target == dannyList.dataset.target || event.target.dataset.target == dannyList.dataset.target) {
-//             console.log(`ha`);
-
-//         }
-//     })
-// })
-
-let chatListSecond = document.querySelector('.chats-list.second');
-let chatListThird = document.querySelector('.chats-list.third');
-
-// close every thing by escape
-document.body.addEventListener('keyup', e => {
-    if (e.keyCode == 27) {
-        chatsHeader.style.display = 'none';
-        chatsFooter.style.display = 'none';
-        chatsList.style.display = 'none';
-        accountSidebar.style.display = 'none';
-        sidebarSettings.style.display = 'none';
-        accountSettingsEditModal.style.display = 'none';
+    
+    // close users info modal by close btn
+    function closeUserInfoModal() {
         userAccountModalFirst.style.display = 'none';
         saraAccountModal.style.display = 'none';
-        saraAccountPhoneCall.style.display = 'none';
-        saraAccountModalMainImg.style.display = 'none';
+    }
+    
+    // open users info modal change list
+    function openUsersInfoChangeList() {
+        usersInfoChangeList.style.display = 'block'
+        saraAccountChangeList.style.display = 'block';
+    }
+    
+    // close users info modal change list
+    userAccountModalFirst.addEventListener('mouseover', e => {
+        if (e.target == userAccountModalWrapper || e.target == userAccountModalFirst) {
+            usersInfoChangeList.style.display = 'none';
+        }
+    })
+    
+    // users modal phone call function
+    function userPhoneCall() {
+        phoneCallAudio.play();
+    }
+    
+    // open user phone call modal
+    function userPhoneCall() {
+        userPhoneCallModal.style.display = 'block';
+        phoneCallAudio.play();
+        userAccountModalFirst.style.display = 'none';
+    }
+    
+    // close user phone call modal by btn
+    function closeUserPhoneCall() {
         userPhoneCallModal.style.display = 'none';
-        markAccountModal.style.display = 'none';
-        markPhoneModalWrapper.style.display = 'none';
+    }
+    
+    // make phone call modal big screen
+    function toBigScreenPhoneCall() {
+        phoneCallModal.classList.toggle('active');
+        saraPhoneCallModal.classList.toggle('active');
+    }
+    
+    // make phone call modal mini screen
+    function toMiniScreenPhoneCall() {
+        phoneCallModal.classList.remove('active');
+        saraPhoneCallModal.classList.remove('active');
+    }
+    
+    // phone call video call 
+    function changeVideCall() {
+        phoneCallVideoBtn.classList.toggle('active')
+        phoneCallVideoIcon.classList.toggle('active')
+        saraPhoneCallVideoBtn.classList.toggle('active');
+        saraPhoneCallVideoImg.classList.toggle('active');
+        markPhoneModalVideoBtn.classList.toggle('active');
+        markPhoneModalVideoImg.classList.toggle('active');
+    }
+    
+    saraAccountModal.addEventListener('mouseover', e => {
+        if (e.target == saraAccountModal || e.target == saraAccountModalWrapper) {
+            saraAccountChangeList.style.display = 'none';
+        }
+    })
+    
+    // open sara account phone call section
+    function toPhoneCallSara() {
+        saraAccountPhoneCall.style.display = 'block';
+        phoneCallAudio.play();
+        saraAccountModal.style.display = 'none';
+    }
+    
+    // open user account modal main image
+    function openUserAccountModalMainImage() {
+        userAccountModalMainImage.style.display = 'block';
+        userAccountModalFirst.style.display = 'none';
+        let userAccountModalImg = document.querySelector('.mark-account-image-modal-img')
+        userAccountModalImg.style.zIndex = 2;
+    }
+    
+    // close user account modal main image
+    function closeUserAccountModalMainImage() {
         userAccountModalMainImage.style.display = 'none';
-        chatListSecond.style.display = 'none';
-        chatListThird.style.display = 'none';
-        chatBtnToAccountBack.style.display = 'none'
     }
-})
-
-// close every thing by btn
-escapeBtn.addEventListener('click', logOut);
-let telegramCloseBtn = document.querySelector('.account-close-btn');
-telegramCloseBtn.addEventListener('click', () => {
-    logOut()
-})
-
-function logOut() {
-    telegram.style.display = 'none';
-}
-// log out by settings reomove item
-function alert() {
-    let confirmation = confirm('Are you sure to log out from telegram?');
-    if(confirmation == true) {
-        logOut()
+    
+    // close sara phone call
+    function closeSaraPhoneCall() {
+        saraAccountPhoneCall.style.display = 'none';
     }
-}
-
-// // press account
-// let liId = [];
-// listItemElements.forEach(function(li){
-//     li.addEventListener('click', function(e){
-//         liId.push(e);
-//         li.setAttribute('Id', liId.length + 1);
-//     })
-// })
-
-// query function
-function $(element) {
-    return document.querySelector(element)
-}
-
-
-// show users info modal
-chatsTextElements.forEach(function(chat) {
-    chat.addEventListener('click', e => {
-        if (e.target.parentNode.id == 'danny') {
-            userAccountModalFirst.style.display = 'block';
-        } else if (e.target.parentNode.id == 'sara') {
-            saraAccountModal.style.display = 'block';
-        } else if (e.target.parentNode.id == 'mark') {
-            markAccountModal.style.display = 'block';
+    
+    // open sara account main img
+    function openSaraAccountMainImg() {
+        saraAccountModalMainImg.style.display = 'block';
+        saraAccountModal.style.display = 'none';
+    }
+    
+    
+    // close mark account modal by close btn
+    function closeMarkAccount() {
+        markAccountModal.style.display = 'none';
+    }
+    
+    // open mark modal change list
+    function openMarkModalChangeList() {
+        markModalChangeList.style.display = 'block';
+    }
+    
+    // close mark modal change list
+    markAccountModal.addEventListener('mouseover', e => {
+        if (e.target == markAccountModal || e.target == markAccountModalWrapper) {
+            markModalChangeList.style.display = 'none';
         }
     })
-})
-
-// close users info modal by close btn
-function closeUserInfoModal() {
-    userAccountModalFirst.style.display = 'none';
-    saraAccountModal.style.display = 'none';
-}
-
-// open users info modal change list
-function openUsersInfoChangeList() {
-    usersInfoChangeList.style.display = 'block'
-    saraAccountChangeList.style.display = 'block';
-}
-
-// close users info modal change list
-userAccountModalFirst.addEventListener('mouseover', e => {
-    if (e.target == userAccountModalWrapper || e.target == userAccountModalFirst) {
-        usersInfoChangeList.style.display = 'none';
+    
+    // open mark phone modal
+    function openmarkPhoneModalWrapper() {
+        markPhoneModalWrapper.style.display = 'block';
+        markAccountModal.style.display = 'none';
+        phoneCallAudio.play();
     }
-})
-
-// users modal phone call function
-function userPhoneCall() {
-    phoneCallAudio.play();
-}
-
-// open user phone call modal
-function userPhoneCall() {
-    userPhoneCallModal.style.display = 'block';
-    phoneCallAudio.play();
-    userAccountModalFirst.style.display = 'none';
-}
-
-// close user phone call modal by btn
-function closeUserPhoneCall() {
-    userPhoneCallModal.style.display = 'none';
-}
-
-// make phone call modal big screen
-function toBigScreenPhoneCall() {
-    phoneCallModal.classList.toggle('active');
-    saraPhoneCallModal.classList.toggle('active');
-}
-
-// make phone call modal mini screen
-function toMiniScreenPhoneCall() {
-    phoneCallModal.classList.remove('active');
-    saraPhoneCallModal.classList.remove('active');
-}
-
-// phone call video call 
-function changeVideCall() {
-    phoneCallVideoBtn.classList.toggle('active')
-    phoneCallVideoIcon.classList.toggle('active')
-    saraPhoneCallVideoBtn.classList.toggle('active');
-    saraPhoneCallVideoImg.classList.toggle('active');
-    markPhoneModalVideoBtn.classList.toggle('active');
-    markPhoneModalVideoImg.classList.toggle('active');
-}
-
-saraAccountModal.addEventListener('mouseover', e => {
-    if (e.target == saraAccountModal || e.target == saraAccountModalWrapper) {
-        saraAccountChangeList.style.display = 'none';
+    
+    // close mark phone modal by btn
+    function closeMakrPhoneModal() {
+        markPhoneModalWrapper.style.display = 'none';
     }
-})
-
-// open sara account phone call section
-function toPhoneCallSara() {
-    saraAccountPhoneCall.style.display = 'block';
-    phoneCallAudio.play();
-    saraAccountModal.style.display = 'none';
-}
-
-// open user account modal main image
-function openUserAccountModalMainImage() {
-    userAccountModalMainImage.style.display = 'block';
-    userAccountModalFirst.style.display = 'none';
-    let userAccountModalImg = document.querySelector('.mark-account-image-modal-img')
-    userAccountModalImg.style.zIndex = 2;
-}
-
-// close user account modal main image
-function closeUserAccountModalMainImage() {
-    userAccountModalMainImage.style.display = 'none';
-}
-
-// close sara phone call
-function closeSaraPhoneCall() {
-    saraAccountPhoneCall.style.display = 'none';
-}
-
-// open sara account main img
-function openSaraAccountMainImg() {
-    saraAccountModalMainImg.style.display = 'block';
-    saraAccountModal.style.display = 'none';
-}
-
-
-// close mark account modal by close btn
-function closeMarkAccount() {
-    markAccountModal.style.display = 'none';
-}
-
-// open mark modal change list
-function openMarkModalChangeList() {
-    markModalChangeList.style.display = 'block';
-}
-
-// close mark modal change list
-markAccountModal.addEventListener('mouseover', e => {
-    if (e.target == markAccountModal || e.target == markAccountModalWrapper) {
-        markModalChangeList.style.display = 'none';
+    
+    // make bigger mark phone modal by btn
+    function toBigScreenmarkPhoneModalWrapper() {
+        markPhoneModal.classList.toggle('active');
     }
-})
-
-// open mark phone modal
-function openmarkPhoneModalWrapper() {
-    markPhoneModalWrapper.style.display = 'block';
-    markAccountModal.style.display = 'none';
-    phoneCallAudio.play();
-}
-
-// close mark phone modal by btn
-function closeMakrPhoneModal() {
-    markPhoneModalWrapper.style.display = 'none';
-}
-
-// make bigger mark phone modal by btn
-function toBigScreenmarkPhoneModalWrapper() {
-    markPhoneModal.classList.toggle('active');
-}
-
-// make mini mark phone modal by btn
-function toMiniScreenMarkPhoneModal(){
-    markPhoneModal.classList.remove('active')
-}
-
-// end mark phone modal by btn
-function closeMarkPhoneModal() {
-    markPhoneModal.style.display = 'none';
-}
-
-// open mark account modal main img
-function openMarkAccountModalMainImg() {
-    markAccountModalMainImage.style.display = 'block';
-    markAccountModal.style.display = 'none';
-    markAccountModalMainImage.style.zIndex = 2;
-}
-
-// 
-function closeMarkPhoneModalByBtn() {
-    markAccountModalMainImage.style.display = 'none';
-}
-
-// back to account section from chats section
-function backToAccountSection() {
-    accountSectionElement.classList.remove('remove')
-    chatSectionsElement.classList.remove('active')
-}
-
-listItemElements.forEach(function(e){
-    e.addEventListener('click', i => {
-        
+    
+    // make mini mark phone modal by btn
+    function toMiniScreenMarkPhoneModal(){
+        markPhoneModal.classList.remove('active')
+    }
+    
+    // end mark phone modal by btn
+    function closeMarkPhoneModal() {
+        markPhoneModal.style.display = 'none';
+    }
+    
+    // open mark account modal main img
+    function openMarkAccountModalMainImg() {
+        markAccountModalMainImage.style.display = 'block';
+        markAccountModal.style.display = 'none';
+        markAccountModalMainImage.style.zIndex = 2;
+    }
+    
+    // 
+    function closeMarkPhoneModalByBtn() {
+        markAccountModalMainImage.style.display = 'none';
+    }
+    
+    // back to account section from chats section
+    function backToAccountSection() {
+        accountSectionElement.classList.remove('remove')
+        chatSectionsElement.classList.remove('active')
+    }
+    
+    listItemElements.forEach(function(e){
+        e.addEventListener('click', i => {
+            
+        })
     })
-})
-
-// open chat change list
-function openChatChangeList() {
-    chatsChangeModalList.style.display = 'block';
-}
-
-// close chat change list
-chatSectionsElement.addEventListener('mouseover', function(e) {
-    if (e.target == chatSectionsElement || e.target == chatListSecond || e.target == chatListThird || e.target == chatsList) {
-        chatsChangeModalList.style.display = 'none';
+    
+    // open chat change list
+    function openChatChangeList() {
+        chatsChangeModalList.style.display = 'block';
     }
-})
-
-chatItem.addEventListener('contextmenu', e => {
-    e.preventDefault()
-    let newDeleteList = document.createElement('ul');
-    newDeleteList.classList.add('chat-delele-list');
-    let newDeleteItem = document.createElement('li');
-    let newDeleteItem2 = document.createElement('li');
-    let newDeleteItem3 = document.createElement('li');
-    let newDeleteItem4 = document.createElement('li');
-    let newDeleteItem5 = document.createElement('li');
-    let newDeleteItem6 = document.createElement('li');
-    let newDeleteItem7 = document.createElement('li');
-    newDeleteItem.classList.add('chat-delete-item');
-    newDeleteItem2.classList.add('chat-delete-item');
-    newDeleteItem3.classList.add('chat-delete-item');
-    newDeleteItem4.classList.add('chat-delete-item');
-    newDeleteItem5.classList.add('chat-delete-item');
-    newDeleteItem6.classList.add('chat-message-delete');
-    newDeleteItem7.classList.add('chat-delete-item');
-    newDeleteItem.textContent = 'Reply';
-    newDeleteItem2.textContent = 'Edit';
-    newDeleteItem3.textContent = 'Pin Message';
-    newDeleteItem4.textContent = 'Cpy Text';
-    newDeleteItem5.textContent = 'Forward';
-    newDeleteItem6.textContent = 'Delete';
-    newDeleteItem7.textContent = 'Select Message';
-    newDeleteList.appendChild(newDeleteItem);
-    newDeleteList.appendChild(newDeleteItem2);
-    newDeleteList.appendChild(newDeleteItem3);
-    newDeleteList.appendChild(newDeleteItem4);
-    newDeleteList.appendChild(newDeleteItem5);
-    newDeleteList.appendChild(newDeleteItem6);
-    newDeleteList.appendChild(newDeleteItem7);
-    chatItem.appendChild(newDeleteList);
-    // newDeleteList.style.display = 'block';
-    let contextMenu = newDeleteList;
-    newDeleteList.addEventListener('click', e => {
-        if(e.target.className == 'chat-message-delete') {
-            let parentElement = e.target.parentElement.parentElement;
-            chatsMessagesDeleteModal.style.display = 'block';
-            newDeleteList.style.display = 'none'
-            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
-                chatsList.removeChild(parentElement);
-                chatsMessagesDeleteModal.style.display = 'none';
-            })
-            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
-                chatsMessagesDeleteModal.style.display = 'none';
-            })
+    
+    // close chat change list
+    chatSectionsElement.addEventListener('mouseover', function(e) {
+        if (e.target == chatSectionsElement || e.target == chatListSecond || e.target == chatListThird || e.target == chatsList) {
+            chatsChangeModalList.style.display = 'none';
         }
     })
-    document.body.addEventListener('click', e => {
-        contextMenu.style.display = 'none';
+    
+    chatItem.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        let newDeleteList = document.createElement('ul');
+        newDeleteList.classList.add('chat-delele-list');
+        let newDeleteItem = document.createElement('li');
+        let newDeleteItem2 = document.createElement('li');
+        let newDeleteItem3 = document.createElement('li');
+        let newDeleteItem4 = document.createElement('li');
+        let newDeleteItem5 = document.createElement('li');
+        let newDeleteItem6 = document.createElement('li');
+        let newDeleteItem7 = document.createElement('li');
+        newDeleteItem.classList.add('chat-delete-item');
+        newDeleteItem2.classList.add('chat-delete-item');
+        newDeleteItem3.classList.add('chat-delete-item');
+        newDeleteItem4.classList.add('chat-delete-item');
+        newDeleteItem5.classList.add('chat-delete-item');
+        newDeleteItem6.classList.add('chat-message-delete');
+        newDeleteItem7.classList.add('chat-delete-item');
+        newDeleteItem.textContent = 'Reply';
+        newDeleteItem2.textContent = 'Edit';
+        newDeleteItem3.textContent = 'Pin Message';
+        newDeleteItem4.textContent = 'Cpy Text';
+        newDeleteItem5.textContent = 'Forward';
+        newDeleteItem6.textContent = 'Delete';
+        newDeleteItem7.textContent = 'Select Message';
+        newDeleteList.appendChild(newDeleteItem);
+        newDeleteList.appendChild(newDeleteItem2);
+        newDeleteList.appendChild(newDeleteItem3);
+        newDeleteList.appendChild(newDeleteItem4);
+        newDeleteList.appendChild(newDeleteItem5);
+        newDeleteList.appendChild(newDeleteItem6);
+        newDeleteList.appendChild(newDeleteItem7);
+        chatItem.appendChild(newDeleteList);
+        // newDeleteList.style.display = 'block';
+        let contextMenu = newDeleteList;
+        newDeleteList.addEventListener('click', e => {
+            if(e.target.className == 'chat-message-delete') {
+                let parentElement = e.target.parentElement.parentElement;
+                chatsMessagesDeleteModal.style.display = 'block';
+                newDeleteList.style.display = 'none'
+                chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
+                    chatsList.removeChild(parentElement);
+                    chatsMessagesDeleteModal.style.display = 'none';
+                })
+                chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                    chatsMessagesDeleteModal.style.display = 'none';
+                })
+            }
+        })
+        document.body.addEventListener('click', e => {
+            contextMenu.style.display = 'none';
+        })
     })
-})
-
-
-// get chats list second item
-let chatSecondListItem = $('.chat-item-sara');
-chatSecondListItem.addEventListener('contextmenu', e => {
-    e.preventDefault()
-    let newDeleteList = document.createElement('ul');
-    newDeleteList.classList.add('chat-delele-list-second');
-    let newDeleteItem = document.createElement('li');
-    let newDeleteItem2 = document.createElement('li');
-    let newDeleteItem3 = document.createElement('li');
-    let newDeleteItem4 = document.createElement('li');
-    let newDeleteItem5 = document.createElement('li');
-    let newDeleteItem6 = document.createElement('li');
-    let newDeleteItem7 = document.createElement('li');
-    newDeleteItem.classList.add('chat-delete-item-second');
-    newDeleteItem2.classList.add('chat-delete-item-second');
-    newDeleteItem3.classList.add('chat-delete-item-second');
-    newDeleteItem4.classList.add('chat-delete-item-second');
-    newDeleteItem5.classList.add('chat-delete-item-second');
-    newDeleteItem6.classList.add('chat-message-delete');
-    newDeleteItem7.classList.add('chat-delete-item-second');
-    newDeleteItem.textContent = 'Reply';
-    newDeleteItem2.textContent = 'Edit';
-    newDeleteItem3.textContent = 'Pin Message';
-    newDeleteItem4.textContent = 'Cpy Text';
-    newDeleteItem5.textContent = 'Forward';
-    newDeleteItem6.textContent = 'Delete';
-    newDeleteItem6.setAttribute('id', 'chat-teleter')
-    newDeleteItem7.textContent = 'Select Message';
-    newDeleteList.appendChild(newDeleteItem);
-    newDeleteList.appendChild(newDeleteItem2);
-    newDeleteList.appendChild(newDeleteItem3);
-    newDeleteList.appendChild(newDeleteItem4);
-    newDeleteList.appendChild(newDeleteItem5);
-    newDeleteList.appendChild(newDeleteItem6);
-    newDeleteList.appendChild(newDeleteItem7);
-    chatSecondListItem.appendChild(newDeleteList);
-    // newDeleteList.style.display = 'block';
-    let contextMenu = newDeleteList;
-    newDeleteList.addEventListener('click', e => {
-        if(e.target.className == 'chat-message-delete') {
-            let parentElement = e.target.parentElement.parentElement;
-            let newSecondChatList = e.target.parentElement.parentElement.parentElement;
-            chatsMessagesDeleteModal.style.display = 'block';
-            newDeleteList.style.display = 'none'
-            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
-                newSecondChatList.removeChild(parentElement);
-                chatsMessagesDeleteModal.style.display = 'none';
-            })
-            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
-                chatsMessagesDeleteModal.style.display = 'none';
-            })
-        }
+    
+    
+    // get chats list second item
+    let chatSecondListItem = $('.chat-item-sara');
+    chatSecondListItem.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        let newDeleteList = document.createElement('ul');
+        newDeleteList.classList.add('chat-delele-list-second');
+        let newDeleteItem = document.createElement('li');
+        let newDeleteItem2 = document.createElement('li');
+        let newDeleteItem3 = document.createElement('li');
+        let newDeleteItem4 = document.createElement('li');
+        let newDeleteItem5 = document.createElement('li');
+        let newDeleteItem6 = document.createElement('li');
+        let newDeleteItem7 = document.createElement('li');
+        newDeleteItem.classList.add('chat-delete-item-second');
+        newDeleteItem2.classList.add('chat-delete-item-second');
+        newDeleteItem3.classList.add('chat-delete-item-second');
+        newDeleteItem4.classList.add('chat-delete-item-second');
+        newDeleteItem5.classList.add('chat-delete-item-second');
+        newDeleteItem6.classList.add('chat-message-delete');
+        newDeleteItem7.classList.add('chat-delete-item-second');
+        newDeleteItem.textContent = 'Reply';
+        newDeleteItem2.textContent = 'Edit';
+        newDeleteItem3.textContent = 'Pin Message';
+        newDeleteItem4.textContent = 'Cpy Text';
+        newDeleteItem5.textContent = 'Forward';
+        newDeleteItem6.textContent = 'Delete';
+        newDeleteItem6.setAttribute('id', 'chat-teleter')
+        newDeleteItem7.textContent = 'Select Message';
+        newDeleteList.appendChild(newDeleteItem);
+        newDeleteList.appendChild(newDeleteItem2);
+        newDeleteList.appendChild(newDeleteItem3);
+        newDeleteList.appendChild(newDeleteItem4);
+        newDeleteList.appendChild(newDeleteItem5);
+        newDeleteList.appendChild(newDeleteItem6);
+        newDeleteList.appendChild(newDeleteItem7);
+        chatSecondListItem.appendChild(newDeleteList);
+        // newDeleteList.style.display = 'block';
+        let contextMenu = newDeleteList;
+        newDeleteList.addEventListener('click', e => {
+            if(e.target.className == 'chat-message-delete') {
+                let parentElement = e.target.parentElement.parentElement;
+                let newSecondChatList = e.target.parentElement.parentElement.parentElement;
+                chatsMessagesDeleteModal.style.display = 'block';
+                newDeleteList.style.display = 'none'
+                chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
+                    newSecondChatList.removeChild(parentElement);
+                    chatsMessagesDeleteModal.style.display = 'none';
+                })
+                chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                    chatsMessagesDeleteModal.style.display = 'none';
+                })
+            }
+        })
+        let newSecondList = $('.chats-list-sara');
+        document.body.addEventListener('click', e => {
+            contextMenu.style.display = 'none';
+        })
     })
-    let newSecondList = $('.chats-list-sara');
-    document.body.addEventListener('click', e => {
-        contextMenu.style.display = 'none';
+    
+    let chatThirdListItem = $('.chat-item-mark');
+    chatThirdListItem.addEventListener('contextmenu', e => {
+        e.preventDefault()
+        let newDeleteList = document.createElement('ul');
+        newDeleteList.classList.add('chat-delele-list-third');
+        let newDeleteItem = document.createElement('li');
+        let newDeleteItem2 = document.createElement('li');
+        let newDeleteItem3 = document.createElement('li');
+        let newDeleteItem4 = document.createElement('li');
+        let newDeleteItem5 = document.createElement('li');
+        let newDeleteItem6 = document.createElement('li');
+        let newDeleteItem7 = document.createElement('li');
+        newDeleteItem.classList.add('chat-delete-item-third');
+        newDeleteItem2.classList.add('chat-delete-item-third');
+        newDeleteItem3.classList.add('chat-delete-item-third');
+        newDeleteItem4.classList.add('chat-delete-item-third');
+        newDeleteItem5.classList.add('chat-delete-item-third');
+        newDeleteItem6.classList.add('chat-message-delete');
+        newDeleteItem7.classList.add('chat-delete-item-third');
+        newDeleteItem.textContent = 'Reply';
+        newDeleteItem2.textContent = 'Edit';
+        newDeleteItem3.textContent = 'Pin Message';
+        newDeleteItem4.textContent = 'Cpy Text';
+        newDeleteItem5.textContent = 'Forward';
+        newDeleteItem6.textContent = 'Delete';
+        newDeleteItem7.textContent = 'Select Message';
+        newDeleteList.appendChild(newDeleteItem);
+        newDeleteList.appendChild(newDeleteItem2);
+        newDeleteList.appendChild(newDeleteItem3);
+        newDeleteList.appendChild(newDeleteItem4);
+        newDeleteList.appendChild(newDeleteItem5);
+        newDeleteList.appendChild(newDeleteItem6);
+        newDeleteList.appendChild(newDeleteItem7);
+        chatThirdListItem.appendChild(newDeleteList);
+        // newDeleteList.style.display = 'block';
+        let contextMenu = newDeleteList;
+        newDeleteList.addEventListener('click', e => {
+            if(e.target.className == 'chat-message-delete') {
+                let parentElement = e.target.parentElement.parentElement;
+                let newThirdChatList = e.target.parentElement.parentElement.parentElement;
+                chatsMessagesDeleteModal.style.display = 'block';
+                newDeleteList.style.display = 'none'
+                chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
+                    newThirdChatList.removeChild(parentElement);
+                    chatsMessagesDeleteModal.style.display = 'none';
+                })
+                chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
+                    chatsMessagesDeleteModal.style.display = 'none';
+                })
+            }
+        })
+        let newThirdList = $('.chats-list-mark')
+        document.body.addEventListener('click', e => {
+            contextMenu.style.display = 'none';
+        })
     })
-})
-
-let chatThirdListItem = $('.chat-item-mark');
-chatThirdListItem.addEventListener('contextmenu', e => {
-    e.preventDefault()
-    let newDeleteList = document.createElement('ul');
-    newDeleteList.classList.add('chat-delele-list-third');
-    let newDeleteItem = document.createElement('li');
-    let newDeleteItem2 = document.createElement('li');
-    let newDeleteItem3 = document.createElement('li');
-    let newDeleteItem4 = document.createElement('li');
-    let newDeleteItem5 = document.createElement('li');
-    let newDeleteItem6 = document.createElement('li');
-    let newDeleteItem7 = document.createElement('li');
-    newDeleteItem.classList.add('chat-delete-item-third');
-    newDeleteItem2.classList.add('chat-delete-item-third');
-    newDeleteItem3.classList.add('chat-delete-item-third');
-    newDeleteItem4.classList.add('chat-delete-item-third');
-    newDeleteItem5.classList.add('chat-delete-item-third');
-    newDeleteItem6.classList.add('chat-message-delete');
-    newDeleteItem7.classList.add('chat-delete-item-third');
-    newDeleteItem.textContent = 'Reply';
-    newDeleteItem2.textContent = 'Edit';
-    newDeleteItem3.textContent = 'Pin Message';
-    newDeleteItem4.textContent = 'Cpy Text';
-    newDeleteItem5.textContent = 'Forward';
-    newDeleteItem6.textContent = 'Delete';
-    newDeleteItem7.textContent = 'Select Message';
-    newDeleteList.appendChild(newDeleteItem);
-    newDeleteList.appendChild(newDeleteItem2);
-    newDeleteList.appendChild(newDeleteItem3);
-    newDeleteList.appendChild(newDeleteItem4);
-    newDeleteList.appendChild(newDeleteItem5);
-    newDeleteList.appendChild(newDeleteItem6);
-    newDeleteList.appendChild(newDeleteItem7);
-    chatThirdListItem.appendChild(newDeleteList);
-    // newDeleteList.style.display = 'block';
-    let contextMenu = newDeleteList;
-    newDeleteList.addEventListener('click', e => {
-        if(e.target.className == 'chat-message-delete') {
-            let parentElement = e.target.parentElement.parentElement;
-            let newThirdChatList = e.target.parentElement.parentElement.parentElement;
-            chatsMessagesDeleteModal.style.display = 'block';
-            newDeleteList.style.display = 'none'
-            chatsMessagesDeleteModalYesBtn.addEventListener('click', e => {
-                newThirdChatList.removeChild(parentElement);
-                chatsMessagesDeleteModal.style.display = 'none';
-            })
-            chatsMessagesDeleteModalNotBtn.addEventListener('click', () => {
-                chatsMessagesDeleteModal.style.display = 'none';
-            })
-        }
-    })
-    let newThirdList = $('.chats-list-mark')
-    document.body.addEventListener('click', e => {
-        contextMenu.style.display = 'none';
-    })
-})
-
-// function openChatMessageDeleterModal() {
-//     chatsMessagesDeleteModal.style.display = 'block';
-//     chatsMessageDeleteListSecond.style.display = 'none';
-// }
+    
+    // function openChatMessageDeleterModal() {
+    //     chatsMessagesDeleteModal.style.display = 'block';
+    //     chatsMessageDeleteListSecond.style.display = 'none';
+    // }
